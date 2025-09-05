@@ -37,8 +37,8 @@
     gtag('config', 'G-6CSEFC9FM6');
   </script>
 
-  <script type="module" crossorigin src="/assets/index-DRVuMfqY.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DW6oZvew.css">
+  <script type="module" crossorigin src="/assets/index-Cgnh0iON.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CdZfJzkZ.css">
 </head>
 
 <body>
@@ -656,7 +656,7 @@
                 </svg>
               </button>
             </form>
-            <p id="form-message" style="display:none; margin-top:1rem; color:#D4AF37;">
+            <p id="form-message">
               Thank you! You’re now in the inner circle.
             </p>
           </div>
@@ -680,29 +680,7 @@
 
   </div>
 
-  <script>
-    document.getElementById('subscribe-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      try {
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (response.ok) {
-          form.reset();
-          document.getElementById('form-message').style.display = 'block';
-        } else {
-          alert('Oops! There was a problem submitting your form');
-        }
-      } catch (error) {
-        alert('Network error. Please try again later.');
-      }
-    });
-  </script>
-
+  
 </body>
 
 </html>
