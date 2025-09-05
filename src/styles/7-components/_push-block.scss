@@ -1,0 +1,126 @@
+@use "../2-design-tokens/media-queries" as *;
+
+/* Push Block */
+
+.push-block {
+
+    &.booking{
+        position: absolute;
+        z-index: 10;
+        transform-origin: 50% 0;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 0;
+    }
+
+    &.important{
+        .content{
+            p{
+                max-width: 520px;
+            }
+        }
+    }
+
+    box-sizing: border-box;
+
+    width: max-content;              /* ou fit-content si tu préfères */
+    max-width: 90%;
+    box-sizing: border-box;
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 0 0 auto;
+
+        padding: 1.5rem 4rem 2.5rem 4rem;
+
+        background-color: var(--ColorBlack, #000);
+        background:
+            radial-gradient(circle at center,
+                rgba(var(--ColorBlack-RGB), 0) 0%,
+                rgba(var(--ColorBlack-RGB), .25) 100%),
+            linear-gradient(0deg,
+                rgba(var(--ColorBlack-RGB), .5) 0%,
+                rgba(var(--ColorBlack-RGB), .5) 5%,
+                rgba(var(--ColorBlack-RGB), 0) 25%,
+                rgba(var(--ColorBlack-RGB), 0) 75%,
+                rgba(var(--ColorBlack-RGB), .5) 95%,
+                rgba(var(--ColorBlack-RGB), .5) 100%),
+            url('/images/StarsPainting.jpg') center/cover no-repeat;
+
+        border-image-source: url('/images/FrameBorder.webp');
+        border-image-repeat: stretch stretch;
+        border-image-outset: 0 0 0 0;
+        border-image-slice: 44 44 44 44;
+        border-image-width: 1.25rem 1.25rem 1.25rem 1.25rem;
+        border-style: solid;
+        border-radius: 1rem;
+
+        color: var(--ColorWhite, #fff);
+        box-shadow: 2px 4px 40px rgba(var(--ColorBlack-RGB), .75);
+        // filter: drop-shadow(0 2px 14px rgba(var(--ColorBlack-RGB,.75)));
+
+            @include responsive ('sm'){
+            padding: 1rem 2rem 2rem 2rem;
+        }
+    }
+
+    h1, h3 {
+        margin: 0;
+        padding: 1rem;
+        font-size: var(--fluid-4);
+        text-align: center;
+        background: radial-gradient(circle at center,
+            var(--ColorGoldLight) 0%,
+            var(--ColorGoldDark) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        filter: drop-shadow(1px 2px 4px rgba(var(--ColorBlack-RGB,.75)));
+    }
+
+    p{
+        margin: 0;
+        font-size: var(--fluid-1);
+        text-align: center;
+        color: var(--ColorCloud);
+        margin-top: -0.75rem;
+        white-space: inherit;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+        filter: drop-shadow(1px 2px 4px rgba(var(--ColorBlack-RGB,.75)));
+
+        @include responsive ('sm'){
+            margin-top: 0;
+            
+            .sep{
+                display: none;
+            }
+
+            .jump{
+                display: block;
+            }
+        }
+
+        .sep{
+            padding: 0 .5rem;
+        }
+
+        .jump{
+            text-align: center;
+            // white-space: normal;
+            // overflow-wrap: anywhere;
+            // hyphens: auto;
+        }
+    }
+
+    .btn{
+        margin-top: 1.5rem;
+        
+        .label{
+            font-size: calc( var(--fluid-1) - 0.2em);
+        }
+    }
+}

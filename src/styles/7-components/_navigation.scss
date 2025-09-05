@@ -1,0 +1,409 @@
+@use "../2-design-tokens/media-queries" as *;
+
+/* Promotion Top-Bar */
+
+.sticky-top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 103;
+
+    .top-nav {
+        background:
+            center / cover no-repeat url("/images/TopHeaderBG.svg");
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        padding: 0.5rem 1rem 0.75rem 1rem;
+        // height: 2.5rem;
+
+        @include responsive ('xl') {
+            padding: 0.75rem 1rem 1rem 1rem;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, .0), rgba(0, 0, 0, .5));
+            pointer-events: none;
+        }
+
+        .brand {
+            flex: 0 0 auto;
+            z-index: 2;
+            font-size: var(--fluid--1);
+
+            @include responsive ('xl') {
+                display: none;
+            }
+
+            .left {
+                color: var(--ColorWhite);
+                font-weight: bold;
+            }
+
+            .right,
+            .sep {
+                color: var(--ColorMetalSilverLight);
+            }
+        }
+
+        .social {
+            flex: 0 0 auto;
+            z-index: 2;
+            display: flex;
+            flex-direction: row;
+            gap: .75rem;
+
+            @include responsive ('xl') {
+                display: none;
+            }
+
+            .btn--circle {
+                padding: .75rem;
+
+                img {
+                    height: 1rem;
+                }
+            }
+        }
+
+        .promo {
+            z-index: 2;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            white-space: nowrap; // une seule ligne en desktop
+            font-size: var(--fluid--1);
+
+            &>span {
+                white-space: inherit;
+            }
+
+            @include responsive('xl') {
+                // <= 1279px (ton mixin max-width)
+                position: static; // revient dans le flux
+                left: auto;
+                transform: none;
+                display: block;
+                width: 100%;
+                text-align: center;
+                white-space: normal; // 👉 autorise le retour à la ligne
+                overflow-wrap: anywhere; // casse au besoin (sécurité)
+                hyphens: auto;
+            }
+        }
+    }
+}
+
+/* Scroll Nav-Bar */
+
+#navbar {
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    position: fixed;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 2rem .5rem .5rem .5rem;
+    margin-top: -1rem;
+    // background-color: var(--ColorBlack);
+
+    z-index: 101;
+    transition: all 0.3s;
+    width: auto;
+
+    @include responsive ('sm') {
+        padding: 1.5rem 1rem .5rem 1rem;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        /* clics traversent */
+        z-index: -1;
+        background:
+            linear-gradient(180deg,
+                rgba(var(--ColorBlack-RGB), 1) 0%,
+                rgba(var(--ColorBlack-RGB), 1) 40%,
+                rgba(var(--ColorBlack-RGB), .75) 70%,
+                rgba(var(--ColorBlack-RGB), 0) 100%,
+            );
+        padding-bottom: 8rem;
+
+        @include responsive ('sm') {
+            padding-bottom: 6rem !important;
+        }
+    }
+
+    .logo {
+
+        @include responsive ('sm') {
+            order: 1;
+            margin-right: auto;
+        }
+
+        img {
+            max-height: 2.5rem;
+            width: auto;
+            display: inline-block;
+
+            @include responsive ('sm') {
+                max-height: 2rem;
+                margin-bottom: .25rem;
+                position: inherit;
+                left: 0;
+                transform-origin: inherit;
+                transform: inherit;
+            }
+        }
+    }
+
+    .btn--primary {
+        // transform: scale(.95);
+
+        @include responsive ('sm') {
+            order: 2;
+        }
+    }
+
+    a#openMenu {
+        font-size: var(--fluid-0);
+        font-weight: bold;
+        padding: 0;
+
+        @include responsive ('sm') {
+            order: 3;
+        }
+    }
+
+    .mobile {
+        display: none;
+        gap: .5rem;
+
+        @include responsive ('sm') {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn--primary {
+            .label {
+                font-size: calc(var(--fluid-1) - 0.1em);
+            }
+        }
+    }
+
+    .desktop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        padding-top: 0;
+        padding-bottom: 0;
+        max-width: inherit;
+        gap: 4rem;
+        margin-left: 2rem;
+
+        @include responsive ('lg') {
+            gap: 3rem;
+            padding: 0;
+        }
+
+        @include responsive ('md') {
+            gap: 2rem;
+            padding: 0;
+            margin-left: .25rem;
+        }
+
+        .left,
+        .right {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+
+            @include responsive ('md') {
+                gap: 1rem;
+            }
+
+            a.link {
+                font-size: var(--fluid-0);
+            }
+
+            a.btn {
+                margin-bottom: -0.25rem;
+                // transform: scale(.9);
+            }
+        }
+
+        @include responsive ('sm') {
+            display: none;
+        }
+    }
+}
+
+/* Canvas Aside Mobile Nav-Bar */
+
+/* Bloque le scroll quand le menu est ouvert */
+// body.no-scroll {
+//   overflow: hidden;
+// }
+
+/* Optionnel: effet “dim” du contenu principal */
+#main.overlay-mobile {
+    //   filter: blur(0px) brightness(.9);
+    transition: filter .3s ease;
+}
+
+#menuMobile {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: block;
+
+    width: 0;
+    overflow: hidden;
+    background: rgba(var(--ColorBlack-RGB), 0);
+    transition: background .3s ease, width 0s .3s;
+
+    &.is-open {
+        width: 100%;
+        /* overlay actif sur toute la vue */
+        background: rgba(var(--ColorBlack-RGB), 0.75);
+        /* fond assombri */
+        transition: background .3s ease, width 0s;
+        /* width immédiat */
+
+        .menuMobile__panel {
+            transform: translateX(0);
+            /* panneau visible */
+        }
+    }
+
+    nav.menuMobile__panel {
+        position: absolute;
+        box-sizing: border-box;
+        top: 0;
+        right: 0;
+        padding: 2rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        // gap: 2rem;
+
+        /* responsive: width 100% limité à 400px */
+        width: 100%;
+        max-width: 440px;
+
+        background-color: var(--ColorBlack, #000);
+        background:
+            radial-gradient(circle at center,
+                rgba(var(--ColorBlack-RGB), 0) 0%,
+                rgba(var(--ColorBlack-RGB), .5) 100%),
+            linear-gradient(90deg,
+                rgba(var(--ColorBlack-RGB), .5) 0%,
+                rgba(var(--ColorBlack-RGB), .5) 5%,
+                rgba(var(--ColorBlack-RGB), 0) 25%,
+                rgba(var(--ColorBlack-RGB), 0) 75%,
+                rgba(var(--ColorBlack-RGB), .5) 95%,
+                rgba(var(--ColorBlack-RGB), .5) 100%),
+            url('/images/StarsPainting.jpg') center/cover no-repeat;
+
+        border-image-source: url('/images/FrameBorder.webp');
+        border-image-repeat: stretch stretch;
+        border-image-outset: 0 0 0 0;
+        border-image-slice: 44 44 44 44;
+        border-image-width: 20px 20px 20px 20px;
+        border-style: solid;
+        border-radius: 1rem;
+
+        // border: 1.5rem solid transparent; /* épaisseur du cadre */
+        // border-image: url('/images/FrameBorder.webp') 60 round; ;
+
+        color: var(--ColorWhite, #fff);
+        box-shadow: -8px 0 24px rgba(var(--ColorBlack-RGB), .35);
+
+        transform: translateX(100%);
+        /* hors écran à droite */
+        transition: transform .3s ease;
+        will-change: transform;
+
+        .menuMobile__close {
+            position: absolute;
+            top: .75rem;
+            right: .5rem;
+            appearance: none;
+            background: transparent;
+            border: 0;
+            color: var(--ColorWhite);
+            font-weight: normal;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        img.logo {
+            width: 80%;
+            max-width: 240px;
+        }
+
+        ul {
+            width: 100%;
+            text-align: center;
+            // margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            justify-content: center;
+
+            &.social {
+                flex-direction: row;
+                gap: 2rem;
+            }
+
+            li {
+                a.link {
+                    font-size: var(--fluid-2);
+                }
+
+                .btn--primary {
+                    // transform: scale(.9);
+                    margin-top: 1rem;
+
+                    span {
+                        // font-size: 1.25rem;
+                        font-size: calc(var(--fluid-2) - 0.05em);
+                    }
+
+                    img {
+                        height: 1.5rem;
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+        .brand {
+            font-size: var(--fluid-0);
+            text-align: center;
+
+            .left {
+                color: var(--ColorWhite);
+                font-weight: bold;
+            }
+
+            .right,
+            .sep {
+                color: var(--ColorMetalSilverLight);
+            }
+        }
+    }
+}

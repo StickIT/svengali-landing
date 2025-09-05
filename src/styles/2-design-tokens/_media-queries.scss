@@ -1,0 +1,51 @@
+/**
+ * Standard Media Queries
+ */
+// :root {
+//     --mq-small: "screen and (max-width: 47.9375em)";
+//     --mq-medium: "screen and (min-width: 48em)";
+//     --mq-large: "only screen and (min-width: 64.0625em)";
+//     --mq-x-large: "screen and (min-width: 90em)";
+// }
+
+@use "sass:map";
+
+/* Breakpoints (tes valeurs) */
+$breakpoint-xl: 1279px;
+$breakpoint-lg: 1023px;
+$breakpoint-md: 767px;
+$breakpoint-sm: 639px;
+$breakpoint-xsm: 519px;
+$breakpoint-xs: 389px;
+
+/* Map (clés en CHAÎNES pour matcher les appels 'xl', 'md', etc.) */
+$breakpoints: (
+  'xs':  $breakpoint-xs,
+  'xsm': $breakpoint-xsm,
+  'sm':  $breakpoint-sm,
+  'md':  $breakpoint-md,
+  'lg':  $breakpoint-lg,
+  'xl':  $breakpoint-xl
+) !default;
+
+/* max-width */
+@mixin responsive($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (max-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "No value for `#{$breakpoint}`. Available: #{map.keys($breakpoints)}.";
+  }
+}
+
+/* (optionnel) min-width */
+@mixin responsive-up($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "No value for `#{$breakpoint}`. Available: #{map.keys($breakpoints)}.";
+  }
+}

@@ -1,0 +1,18 @@
+body {
+    color: var(--TextColor);
+    background-color: var(--BackgroundColor);
+    padding-right: var(--scrollbarComp);
+    overflow-x: hidden;
+    margin: 0;
+}
+
+div#main{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    position: relative;
+    margin: 0;
+    padding: 0;
+}

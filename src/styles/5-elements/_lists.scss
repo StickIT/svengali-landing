@@ -1,0 +1,38 @@
+ul, ol {
+  font-size: var(--fluid-0);
+  line-height: 1.5;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+li > {
+
+    ul,
+    ol {
+        margin-left: var(--spacing-medium);
+        margin-bottom: 0;
+    }
+
+}
+
+section.list {
+  margin: var(--spacing-xx-large) 0;
+}
+
+ /* Clear List Style */
+
+ul {
+  list-style-type: none; /* supprime les puces */
+  margin: 0;             /* retire la marge par défaut */
+  padding: 0;            /* retire le retrait gauche */
+}
+
+ol {
+  list-style: none; /* supprime la numérotation */
+  margin: 0;
+  padding: 0;
+}

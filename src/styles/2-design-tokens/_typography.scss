@@ -1,0 +1,80 @@
+// /**
+//  *  Typography design tokens: Font-sizes, line-height, etc. 
+//  */
+
+/* @link https://utopia.fyi/type/calculator?c=360,14,1.2,1500,18,1.25,6,3,&s=0.75|0.5|0.25,1.5|2|3|4|6|10|14|18,s-l&g=s,l,xl,12 */
+
+:root {
+  --fluid--3: clamp(0.5064rem, 0.4844rem + 0.0977vw, 0.576rem);
+  --fluid--2: clamp(0.6076rem, 0.5722rem + 0.1577vw, 0.72rem);
+  --fluid--1: clamp(0.7292rem, 0.6752rem + 0.2398vw, 0.9rem);
+  --fluid-0: clamp(0.875rem, 0.7961rem + 0.3509vw, 1.125rem);
+  --fluid-1: clamp(1.05rem, 0.9375rem + 0.5vw, 1.4063rem);
+  --fluid-2: clamp(1.26rem, 1.1028rem + 0.6987vw, 1.7578rem);
+  --fluid-3: clamp(1.512rem, 1.2956rem + 0.9618vw, 2.1973rem);
+  --fluid-4: clamp(1.8144rem, 1.52rem + 1.3083vw, 2.7466rem);
+  --fluid-5: clamp(2.1773rem, 1.7807rem + 1.7627vw, 3.4332rem);
+  --fluid-6: clamp(2.6127rem, 2.0826rem + 2.3562vw, 4.2915rem);
+}
+
+
+
+//  /**
+//   * Fluid type scale based on Utopia (https://utopia.fyi)
+//   */
+//  :root {
+//     --fluid-min-width: 320;
+//     --fluid-max-width: 1500;
+//     --fluid-min-size: 18;
+//     --fluid-max-size: 22;
+//     --fluid-min-ratio: 1.2;
+//     --fluid-max-ratio: 1.5;
+//   }
+  
+//   :root {
+//     --fluid-screen: 100vw;
+//     --fluid-bp: calc((var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) / ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16)));
+//   }
+  
+//   @media screen and (min-width: 1500px) {
+//     :root {
+//       --fluid-screen: calc(var(--fluid-max-width) * 1px);
+//     }
+//   }
+  
+//   :root {
+//     --fluid-min-scale-0: var(--fluid-min-ratio);
+//     --fluid-min-scale-1: var(--fluid-min-scale-0) * var(--fluid-min-ratio);
+//     --fluid-min-scale-2: var(--fluid-min-scale-1) * var(--fluid-min-ratio);
+//     --fluid-min-scale-3: var(--fluid-min-scale-2) * var(--fluid-min-ratio);
+//     --fluid-min-scale-4: var(--fluid-min-scale-3) * var(--fluid-min-ratio);
+//     --fluid-min-scale-5: var(--fluid-min-scale-4) * var(--fluid-min-ratio);
+
+//     --fluid-max-scale-0: var(--fluid-max-ratio);
+//     --fluid-max-scale-1: var(--fluid-max-scale-0) * var(--fluid-max-ratio);
+//     --fluid-max-scale-2: var(--fluid-max-scale-1) * var(--fluid-max-ratio);
+//     --fluid-max-scale-3: var(--fluid-max-scale-2) * var(--fluid-max-ratio);
+//     --fluid-max-scale-4: var(--fluid-max-scale-3) * var(--fluid-max-ratio);
+//     --fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
+
+//     --fluid-min-size-0: (var(--fluid-min-size)) / 16;
+//     --fluid-min-size-1: (var(--fluid-min-size) * var(--fluid-min-scale-0)) / 16;
+//     --fluid-min-size-2: (var(--fluid-min-size) * var(--fluid-min-scale-1)) / 16;
+//     --fluid-min-size-3: (var(--fluid-min-size) * var(--fluid-min-scale-2)) / 16;
+//     --fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
+//     --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
+
+//     --fluid-max-size-0: (var(--fluid-max-size)) / 16;
+//     --fluid-max-size-1: (var(--fluid-max-size) * var(--fluid-max-scale-0)) / 16;
+//     --fluid-max-size-2: (var(--fluid-max-size) * var(--fluid-max-scale-1)) / 16;
+//     --fluid-max-size-3: (var(--fluid-max-size) * var(--fluid-max-scale-2)) / 16;
+//     --fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
+//     --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
+
+//     --fluid-0: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)));
+//     --fluid-1: calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)));
+//     --fluid-2: calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)));
+//     --fluid-3: calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp)));
+//     --fluid-4: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
+//     --fluid-5: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
+//   }

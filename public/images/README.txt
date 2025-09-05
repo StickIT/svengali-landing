@@ -1,0 +1,1 @@
+Place your images here (hero-poster.jpg, slide1.jpg, slide2.jpg, slide3.jpg).

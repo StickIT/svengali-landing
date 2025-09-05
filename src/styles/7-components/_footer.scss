@@ -1,0 +1,211 @@
+@use "../2-design-tokens/media-queries" as *;
+
+.site-footer {
+    background-color: var(--ColorDark);
+    position: relative;
+
+    &::after{
+        content: "";
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        top: -1em;
+        left: 0;
+        right: 0;
+        height: var(--space-m);
+        background: url('/images/section-divider-bg.svg') center/cover no-repeat;
+        filter: drop-shadow(1px 2px 20px rgba(var(--ColorBlack-RGB,.75)));
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: space-between;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .top {
+            display: flex;
+            flex-direction: row;
+            padding-top: var(--space-2xl);
+            padding-bottom: var(--space-xl);
+            gap: var(--space-xl);
+
+            @include responsive ('lg') {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .left {
+                display: flex;
+                flex: 1;
+                flex-direction: row;
+                align-items: center;
+                gap: var(--space-m);
+
+                @include responsive ('xs') {
+                    flex-direction: column;
+                }
+
+                img {
+                    max-width: 200px;
+
+                    @include responsive ('sm') {
+                        max-width: 160px;
+                    }
+                }
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--space-xs);
+
+                    @include responsive ('xs') {
+                        align-items: center;
+                    }
+
+                    h2 {
+                        font-size: var(--fluid-3);
+                        text-transform: uppercase;
+                        margin: 0;
+                        font-family: 'Tongari', sans-serif;
+                    }
+
+                    address {
+                        font-size: var(--fluid-0);
+                        margin: 0;
+                        color: var(--ColorGreyLight);
+                        max-width: 260px;
+                    }
+
+                    ul.social {
+                        display: flex;
+                        flex-direction: row;
+                        gap: var(--space-2xs);
+
+                        li {
+
+                        }
+                    }
+                }
+            }
+
+            .right {
+                display: flex;
+                // flex: 1;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                // gap: var(--space-m);
+
+                @include responsive ('lg') {
+                    text-align: center;
+                    align-items: center;
+                }
+
+                h2 {
+                    font-size: var(--fluid-2);
+                    text-transform: uppercase;
+                    margin: 0;
+                    margin-bottom: 0.15em;
+                    text-align: left;
+                    font-family: 'Tongari', sans-serif;
+                }
+
+                p {
+                    font-size: var(--fluid-0);
+                    margin: 0;
+                    color: var(--ColorGreyLight);
+                }
+
+                #subscribe-form {
+                    display: flex;
+                    align-items: stretch; /* aligne les hauteurs */
+                    width: 100%;
+                    margin-top: 1.5rem;
+
+                    input {
+                        flex: 1; /* occupe tout l’espace restant */
+                        min-width: 0; /* empêche de casser le layout */
+                        padding: 1rem;
+                        border: 2px solid var(--ColorGreyLight);
+                        border-radius: 0.75rem 0 0 0.75rem;
+                        background: var(--ColorWhite);
+                        color: var(--ColorDark);
+                        font-size: calc(var(--fluid-0) - 0.1em);
+                        height: 3rem;
+                    }
+
+                    button{
+                        border-radius: 0 0.75rem 0.75rem 0;
+                        height: 3rem;
+                        cursor: pointer;
+                        flex-shrink: 0; /* garde la taille du bouton fixe */
+
+                        &:hover{
+                            transform: inherit;
+                        }
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            position: relative;
+            padding-top: var(--space-m);
+            padding-bottom: var(--space-m);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            white-space: normal;
+            overflow-wrap: anywhere;
+            hyphens: auto;
+            font-size: calc(var(--fluid-0) - 0.1em);
+
+            @include responsive ('md'){
+                flex-direction: column;
+                gap: .5rem;
+
+                .sep{
+                    display: none !important;
+                }
+
+                .copyright{
+                    text-align: center !important;
+                }
+            }
+
+            &::after{
+                content: "";
+                position: absolute;
+                padding: 0;
+                margin: 0;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: .5rem;
+                background: url('/images/footer-divider.svg') center/100% no-repeat;
+            }
+
+            .copyright {
+                font-weight: normal;
+                font-size: calc(var(--fluid-0) - 0.1em);
+                white-space: inherit;
+                overflow-wrap: break-word; /* coupe si mot trop long */
+            }
+
+            a{
+                color: var(--ColorWhite);
+                font-weight: normal;
+                transition: all .25s ease-in-out;
+                white-space: inherit;
+
+                &:hover{
+                    opacity: .75;
+                }
+            }
+        }
+    }
+}

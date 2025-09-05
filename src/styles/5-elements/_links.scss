@@ -1,0 +1,55 @@
+a.link {
+  text-decoration: none;
+  background: linear-gradient(to bottom, var(--ColorGoldLight), var(--ColorGoldDark));
+  /* ton dégradé */
+  -webkit-background-clip: text;
+  /* clippe le bg au texte (Safari/Chrome) */
+  -webkit-text-fill-color: transparent;
+  /* rend le texte transparent pour voir le bg */
+  background-clip: text;
+  /* Firefox */
+  color: transparent;
+  /* fallback */
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:focus-visible {
+    filter: brightness(1.4);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+
+    background: linear-gradient(to bottom, var(--ColorGoldLight), var(--ColorGoldDark));
+
+    transition: all 0.3s ease;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    width: 100%;
+  }
+
+  svg {
+    display: inline-block;
+    fill: currentColor;
+  }
+}
+
+sl-icon-button::part(base) {
+  transform: scale(1.05);
+  color: var(--ColorGoldLight);
+  /* ex. ta palette */
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: scale(1.3);
+    filter: brightness(1.4);
+  }
+}

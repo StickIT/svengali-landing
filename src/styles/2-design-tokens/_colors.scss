@@ -1,0 +1,61 @@
+:root {
+
+    --ColorWhite: #ffffff;
+    --ColorCloud: #FAFCFE;
+    --ColorGreyLight: #D4DCE2;
+    --ColorDark: #050B1B;
+    --ColorDark-RGB: 8, 10, 14;
+    --ColorBlack: #06070C;
+    --ColorBlack-RGB: 6, 7, 12;
+    --ColorGoldLight: #EEC337;
+    --ColorGoldDark: #AF912F;
+    --ColorRed: #9B0102;
+    --ColorRed-RGB: 155, 1, 2;
+    --ColorOrange: #E44E20;
+    --ColorOnyx: #0A1A3D;
+    --ColorOnyx-RGB: 10, 26, 61;
+    --ColorOnyxLight: #143680;
+    --ColorOnyxLight-RGB: 20, 54, 128;
+    --ColorPeach: #F6ECB4;
+    --ColorMetalGoldLight: #A9927C;
+    --ColorMetalGoldDark: #917256;
+    --ColorMetalSilverLight: #D9D9DC;
+    --ColorMetalSilverDark: #A1A3AA;
+
+    --TextColor: var(--ColorWhite);
+    --PrimaryColor: var(--ColorGoldLight);
+    --FocusColor: var(--ColorPeach);
+    --BackgroundColor: var(--ColorBlack);
+    
+}
+
+// /* SCSS */
+// @function to-rgb-list($hex) { @return #{red($hex)}, #{green($hex)}, #{blue($hex)}; }
+
+// :root {
+//   /* exemples avec ta palette */
+//   --ColorBlack: #06070C;
+//   --ColorBlack-rgb: #{to-rgb-list(#06070C)};
+
+//   --ColorOnyx: #0A1A3D;
+//   --ColorOnyx-rgb: #{to-rgb-list(#0A1A3D)};
+// }
+
+// // Very basic support for a dark color scheme
+// @media (prefers-color-scheme: dark) {
+//     :root {
+//         --color-mode: 'dark';
+//     }
+
+//     :root:not([data-user-color-scheme]) {
+//         --BackgroundColor: #1A1A1A;
+//         --TextColor: #eeeeee;
+//         --PrimaryColor: #A15CFF;
+//     }
+// }
+
+// $bg: #0a0a0a;
+// $fg: #f3f3f3;
+// $muted: #c9c9c9;
+// $gold: #d5b46f;
+// $accent: #b60236;

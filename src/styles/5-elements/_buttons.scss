@@ -1,0 +1,149 @@
+@use "../2-design-tokens/media-queries" as *;
+
+:root {
+    --btn-radius: .75rem;
+    --btn-tint-red: rgba(var(--ColorRed-RGB), .6);
+    --btn-tint-grey: rgba(0, 0, 0, 0.5);
+    --btn-tint-blue: rgba(var(--ColorOnyx-RGB), 1);
+    /* teinte rouge */
+    --stroke-outer: rgba(0, 0, 0, .55);
+    --stroke-inner: rgba(255, 255, 255, 0.15);
+    --shadow-btn: 0 10px 24px rgba(0, 0, 0, .35);
+    --shadow-inset: inset 0 2px 10px rgba(0, 0, 0, .35), inset 0 -2px 6px rgba(0, 0, 0, .25);
+    --text-shadow: 1px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.btn {
+    --pad-y: .75rem;
+    --pad-x: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .5rem 1rem .75rem 1rem; 
+    border-radius: var(--btn-radius);
+    text-decoration: none;
+    font-weight: normal;
+    color: #fff;
+    line-height: 1;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s ease;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+
+    border: none;
+    background: none;
+    font: inherit;
+
+    .label{
+        font-size: calc( var(--fluid-0) - 0.1em);
+    }
+}
+
+.btn--primary {
+    background: url('/images/gold-button-bg.jpg') center/cover no-repeat;
+    box-shadow: var(--shadow-btn), var(--shadow-inset);
+    isolation: isolate;
+    filter: brightness(1.00) contrast(1.2);
+
+    &::after{
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        border-radius: inherit;
+        box-shadow:
+            0 0 0 2px var(--stroke-outer),
+            inset 0 0 0 2px var(--stroke-inner);
+    }
+
+    &:hover{
+        transform: translateY(-2px);
+        filter: brightness(1.15) contrast(1.25);
+
+        .chev{
+            transform: translateX(2px) translateY(1px);
+            opacity: 1;
+        }
+    }
+
+    &:active{
+        transform: translateY(0);
+        filter: brightness(0.98);
+    }
+
+    &:focus-visible{
+        outline: none;
+        box-shadow:
+            0 0 0 2px rgba(255, 255, 255, .6),
+            0 0 0 4px rgba(208, 171, 80, .6),
+            var(--shadow-btn),
+            var(--shadow-inset);
+    }
+
+    .label{
+        text-shadow: var(--text-shadow);
+        letter-spacing: .02em;
+        white-space: inherit;
+        margin-top: -1px;
+    }
+
+    .chev{
+        width: 1.25em;
+        height: 1.5em;
+        flex: 0 0 auto;
+        opacity: .9;
+        filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 1)) drop-shadow(0 3px 6px rgba(0, 0, 0, 1));
+        transition: all .18s ease;
+        transform: translateY(1px);
+    }
+
+    .label, .chev{
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.btn--circle{
+    border-radius: 10rem;
+    padding: .85rem;
+
+    img{
+        opacity: 1;
+        z-index: 2;
+        margin-top: -0.1em;
+    }
+}
+
+.btn--red::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: var(--btn-tint-red);
+    mix-blend-mode: hard-light;
+    pointer-events: none;
+}
+
+.btn--grey::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: var(--btn-tint-grey);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+.btn--blue::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: var(--btn-tint-blue);
+    mix-blend-mode: color;
+    pointer-events: none;
+}

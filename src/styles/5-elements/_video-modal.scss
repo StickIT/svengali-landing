@@ -1,0 +1,42 @@
+.video-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(var(--ColorBlack-RGB), .75);
+    backdrop-filter: blur(2px);
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    z-index: 2000;
+}
+
+.video-modal[hidden] {
+    display: none !important;
+}
+
+.video-modal__inner {
+    width: min(1080px, 92vw);
+    aspect-ratio: 16/9;
+    background: var(--ColorBlack);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(var(--ColorBlack-RGB), .6);
+}
+
+.video-modal__player {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: var(--ColorBlack);
+}
+
+.video-modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    color: var(--ColorWhite);
+    border: 0;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
