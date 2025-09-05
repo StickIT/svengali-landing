@@ -7,8 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "npx wrangler pages deploy dist",
-    "deploy:prod": "npm run build && git add . && git commit -m \"Auto deploy for production\" && git push && npx wrangler pages deploy dist",
-    "deploy:staging": "npm run build && git add . && git commit -m \"Auto deploy for staging\" && git push && npx wrangler pages deploy dist --project-name=svengali-landing-staging"
+    "deploy:prod": "npm run build && git add . && (git diff --cached --quiet || git commit -m \"Auto deploy for production\") && git push && npx wrangler pages deploy dist",
+    "deploy:staging": "npm run build && git add . && (git diff --cached --quiet || git commit -m \"Auto deploy for staging\") && git push && npx wrangler pages deploy dist --project-name=svengali-landing-staging"
   },
   "devDependencies": {
     "vite": "^5.4.19",
