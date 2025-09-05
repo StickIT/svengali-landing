@@ -171,9 +171,23 @@
       </nav>
       <section class="stage is-closed" aria-label="Theatre stage with curtains">
         <div class="hero-cta">
-          <button class="video" data-video-open data-video-webm="/videos/promo_AV1_FullHD.webm"
+          <!-- <button class="video" data-video-open data-video-webm="/videos/promo_AV1_FullHD.webm"
             data-video-src="/videos/promo_AV1_FullHD.webm" data-video-title="Svengali – Trailer"
             aria-label="Play Video Trailer">
+            <img src="/images/PlayVideo-1.png" alt="" class="arrow">
+            <img src="/images/PlayVideo-2.png" alt="" class="outer">
+            <img src="/images/PlayVideo-3.png" alt="" class="inner">
+          </button> -->
+          <button class="video" data-video-open 
+                  data-video-sources='[
+                    {"src":"/videos/promo_AV1_FullHD.webm", "type":"video/webm; codecs=av01.0.05M.08", "quality":"1080p", "priority":1},
+                    {"src":"/videos/promo_VP9_FullHD.webm", "type":"video/webm; codecs=vp9", "quality":"1080p", "priority":2},
+                    {"src":"/videos/promo_H265_FullHD.mp4", "type":"video/mp4; codecs=hev1", "quality":"1080p", "priority":3},
+                    {"src":"/videos/promo_H264_FullHD.mp4", "type":"video/mp4; codecs=avc1.4d401f", "quality":"1080p", "priority":4},
+                    {"src":"/videos/promo_H264_720p.mp4", "type":"video/mp4; codecs=avc1.42e01e", "quality":"720p", "priority":5}
+                  ]'
+                  data-video-title="Svengali – Trailer"
+                  aria-label="Play Video Trailer">
             <img src="/images/PlayVideo-1.png" alt="" class="arrow">
             <img src="/images/PlayVideo-2.png" alt="" class="outer">
             <img src="/images/PlayVideo-3.png" alt="" class="inner">
