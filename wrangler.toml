@@ -1,5 +1,13 @@
 name = "svengali-landing"
 compatibility_date = "2025-09-05"
 
-[assets]
-directory = "./dist"
+# Configuration spécifique pour Cloudflare Pages
+pages_build_output_dir = "dist"
+
+# Optionnel : variables d'environnement
+[env.production]
+# Vos variables de production si nécessaire
+
+# Optionnel : configuration des headers
+# [env.production.vars]
+# NODE_ENV = "production"
