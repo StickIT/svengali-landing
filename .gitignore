@@ -2,8 +2,8 @@
 /node_modules/
 
 # Build output
-/dist/
-/build/
+# /dist/
+# /build/
 
 # Logs
 npm-debug.log*
@@ -31,8 +31,8 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
-.wrangler
+# .wrangler
 
 # Autres (facultatif)
-/*.tar.gz
-/*.zip
+# /*.tar.gz
+# /*.zip
