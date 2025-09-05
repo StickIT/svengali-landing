@@ -25,6 +25,7 @@ import { initStageCurtain } from './modules/stage-curtain.js';
 import { initSideNav } from './modules/sidenav.js';
 import { initAdjustPadding} from './modules/adjust-height.js';
 import { initFaq } from './modules/faq.js';
+import { initNewsletter } from './modules/newsletter.js';
 
 window.addEventListener('DOMContentLoaded', () => {
   initAdjustPadding()
@@ -37,4 +38,5 @@ window.addEventListener('DOMContentLoaded', () => {
   initHeroLoader();
   initStageCurtain();
   initFaq();
+  initNewsletter();
 });

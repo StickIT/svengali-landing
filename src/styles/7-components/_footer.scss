@@ -148,6 +148,15 @@
                         }
                     }
                 }
+
+                #form-message{
+                    display:none; 
+                    margin-top:1rem;
+                    width: 100%;
+                    text-align: center;
+                    color:var(--ColorGoldLight);
+                    transition: all .3s ease-in-out;
+                }
             }
         }
 
