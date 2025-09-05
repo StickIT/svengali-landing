@@ -3,10 +3,10 @@
 
 // Register only the components we need
 // import '@shoelace-style/shoelace/dist/components/drawer/drawer.js';
-import '@shoelace-style/shoelace/dist/components/button/button.js';
-import '@shoelace-style/shoelace/dist/components/details/details.js';
-import '@shoelace-style/shoelace/dist/components/icon/icon.js';
-import '@shoelace-style/shoelace/dist/components/icon-button/icon-button.js';
+// import '@shoelace-style/shoelace/dist/components/button/button.js';
+// import '@shoelace-style/shoelace/dist/components/details/details.js';
+// import '@shoelace-style/shoelace/dist/components/icon/icon.js';
+// import '@shoelace-style/shoelace/dist/components/icon-button/icon-button.js';
 
 // Styles (SCSS)
 import '../styles/main.scss';
@@ -25,7 +25,6 @@ import { initStageCurtain } from './modules/stage-curtain.js';
 import { initSideNav } from './modules/sidenav.js';
 import { initAdjustPadding} from './modules/adjust-height.js';
 import { initFaq } from './modules/faq.js';
-// import { initDrawer } from './modules/drawer.js';
 
 window.addEventListener('DOMContentLoaded', () => {
   initAdjustPadding()
@@ -38,23 +37,4 @@ window.addEventListener('DOMContentLoaded', () => {
   initHeroLoader();
   initStageCurtain();
   initFaq();
-  // initDrawer();
-
-  // const drawer = document.querySelector('.DrawerBlock');
-  // const openButton = drawer.nextElementSibling;
-  // const closeButton = drawer.querySelector('.OpenDrawer');
-
-  // openButton.addEventListener('click', () => drawer.show());
-  // closeButton.addEventListener('click', () => drawer.hide());
-
-  // // Details
-  // const container = document.querySelector('.details-group-example');
-  //   // Close all other details when one is shown
-  //   container.addEventListener('sl-show', event => {
-  //     if (event.target.localName === 'sl-details') {
-  //       [...container.querySelectorAll('sl-details')].map(details => (details.open = event.target === details));
-  //     }
-  //   }
-  // );
-
 });
