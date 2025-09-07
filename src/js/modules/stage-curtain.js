@@ -1,32 +1,3 @@
-// export function initStageCurtain() {
-//     const stage = document.querySelector('.stage');
-//     const video = stage.querySelector('.backdrop');
-
-//     const DELAY = 1600; // délai avant ouverture (ms)
-
-//     // garanti fermé au départ
-//     stage.classList.remove('is-open');
-
-//     // ouvre après que les images “bottom” soient chargées (ou au bout de 4s)
-//     const bottoms = stage.querySelectorAll('.bottom');
-//     let loaded = 0;
-
-//     const open = () => {
-//         stage.classList.add('is-open');
-//         if (video && video.paused) video.play().catch(() => { });
-//     };
-
-//     bottoms.forEach(img => {
-//         if (img.complete) loaded++;
-//         else img.addEventListener('load', () => {
-//             if (++loaded === bottoms.length) setTimeout(open, DELAY);
-//         }, { once: true });
-//     });
-
-//     if (loaded === bottoms.length) setTimeout(open, DELAY);
-//     setTimeout(open, 4000); // sécurité réseau lent
-// }
-
 export function initStageCurtain() {
     const stage = document.querySelector('.stage');
     if (!stage) return;
@@ -36,14 +7,15 @@ export function initStageCurtain() {
 
     // Configuration centralisée
     const CURTAIN_DELAY = 1600; // délai avant ouverture des rideaux (ms)
-    const REVEAL_DELAY = 300; // délai entre chaque élément (ms)
+    const REVEAL_START_DELAY = 1200; // délai APRÈS ouverture avant révélation (ms)
+    const REVEAL_DELAY = 600; // délai entre chaque élément (ms)
 
-    // Éléments à révéler dans l'ordre (modifiez cette liste selon vos besoins)
+    // Éléments à révéler dans l'ordre
     const elementsToReveal = [
         '.sticky-top-nav',
         '.header-nav', 
         '.push-block.booking .content',
-        'bouton.video'
+        '.hero-cta'
     ];
 
     let imagesLoaded = 0;
@@ -58,44 +30,67 @@ export function initStageCurtain() {
         elementsToReveal.forEach((selector) => {
             const element = document.querySelector(selector);
             if (element) {
-                // Applique la classe générique et les styles initiaux
+                // Style de base pour tous les éléments
                 element.classList.add('curtain-reveal');
                 element.style.opacity = '0';
-                element.style.transform = 'translateY(30px)';
-                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                element.style.transition = 'opacity 0.6s ease-in-out';
                 element.style.willChange = 'transform, opacity';
+
+                // Gestion spécifique des transforms selon l'élément
+                if (selector === '.sticky-top-nav') {
+                    // .sticky-top-nav vient du HAUT (-16px)
+                    element.style.transform = 'translateY(-16px)';
+                    element.style.transition = 'opacity 0.6s ease-in-out, transform 0.6s ease-in-out';
+                } else if (selector !== '.hero-cta') {
+                    // Autres éléments viennent du BAS (+16px)
+                    element.style.transform = 'translateY(16px)';
+                    element.style.transition = 'opacity 0.6s ease-in-out, transform 0.6s ease-in-out';
+                }
+                // .hero-cta garde son transform existant (centrage)
             }
         });
     };
 
     /**
-     * Ouvre les rideaux et déclenche la révélation progressive
+     * Ouvre les rideaux et programme la révélation progressive
      */
     const openCurtains = () => {
-        // Ouvrir les rideaux
+        // 1. Ouvrir les rideaux immédiatement
         stage.classList.add('is-open');
         
-        // Démarrer la vidéo si elle existe
+        // 2. Démarrer la vidéo si elle existe
         if (video && video.paused) {
             video.play().catch(() => {
-                // Gestion silencieuse de l'erreur autoplay
+                /* Gestion silencieuse de l'erreur autoplay */
             });
         }
 
-        // Révéler les éléments un par un
-        elementsToReveal.forEach((selector, index) => {
-            const element = document.querySelector(selector);
-            if (element) {
-                const delay = index * REVEAL_DELAY;
-                
-                setTimeout(() => {
-                    // Applique l'animation de révélation
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                    element.classList.add('is-revealed');
-                }, delay);
-            }
-        });
+        // 3. Attendre REVEAL_START_DELAY avant de commencer les révélations
+        setTimeout(() => {
+            // Révéler les éléments un par un
+            elementsToReveal.forEach((selector, index) => {
+                const element = document.querySelector(selector);
+                if (element) {
+                    const delay = index * REVEAL_DELAY;
+                    
+                    setTimeout(() => {
+                        // Pour tous les éléments : révéler l'opacité
+                        element.style.opacity = '1';
+                        element.classList.add('is-revealed');
+
+                        // Animation de transform selon le type d'élément
+                        if (selector === '.sticky-top-nav') {
+                            // .sticky-top-nav revient à sa position normale depuis le haut
+                            element.style.transform = 'translateY(0)';
+                        } else if (selector !== '.hero-cta') {
+                            // Autres éléments reviennent à leur position depuis le bas
+                            element.style.transform = 'translateY(0)';
+                        }
+                        // .hero-cta garde son transform de centrage intact
+                    }, delay);
+                }
+            });
+        }, REVEAL_START_DELAY);
     };
 
     /**
@@ -115,7 +110,7 @@ export function initStageCurtain() {
         checkImagesAndOpen();
     };
 
-    // Initialiser les éléments avec les styles
+    // Initialiser les éléments avec les styles appropriés
     initializeElements();
 
     // Gérer le chargement des images "bottom"
