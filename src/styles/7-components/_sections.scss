@@ -387,7 +387,7 @@ section.tickets {
                         a {
                             &:hover {
                                 img {
-                                    transform: translateY(-2px);
+                                    transform: translateY(-2px) translateZ(0);
                                     filter: brightness(1.1) contrast(1.1);
                                 }
                             }
@@ -395,6 +395,9 @@ section.tickets {
                             img {
                                 transition: .3s all ease-in-out;
                                 height: calc(var(--space-xl) + 0.5em);
+                                -webkit-backface-visibility: hidden;
+                                transform: translateZ(0);
+                                will-change: transform, filter;
                             }
                         }
                     }
