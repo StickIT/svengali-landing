@@ -1,8 +1,21 @@
-// src/js/modules/faq.js - Version optimisée
+// src/js/modules/faq.js
 export function initFaq() {
-  document.querySelectorAll('.faq .faq-item').forEach(details => {
-    details.addEventListener('toggle', () => {
-      details.classList.toggle('is-open', details.open);
+  const acc = document.querySelectorAll('.faq .faq-item summary');
+  
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener('click', function(e) {
+      e.preventDefault(); // Empêcher le comportement natif <details>
+      
+      // Toggle class active sur le bouton
+      this.classList.toggle('active');
+      
+      // Toggle display block/none sur le panel
+      const panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
     });
-  });
+  }
 }

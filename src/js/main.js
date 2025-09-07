@@ -28,7 +28,7 @@ import { initFaq } from './modules/faq.js';
 import { initNewsletter } from './modules/newsletter.js';
 
 window.addEventListener('DOMContentLoaded', () => {
-  initAdjustPadding()
+  initAdjustPadding();
   initNavigation();
   initSideNav();
   initSliders();
@@ -38,5 +38,4 @@ window.addEventListener('DOMContentLoaded', () => {
   initHeroLoader();
   initStageCurtain();
   initFaq();
-  initNewsletter();
 });

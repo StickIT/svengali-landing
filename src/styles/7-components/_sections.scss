@@ -841,35 +841,12 @@ section.rules {
                     font-size: var(--fluid-1);
                     transition: all 0.3s ease-in-out;
 
-                    // États d'ouverture avec classes et attributs natifs
-                    &[open],
-                    &.is-open {
-                        .chev {
-                            transform: translateX(-25%) translateY(-50%);
-                        }
-
-                        .faq-body {
-                            opacity: 1;
-                            max-height: 1000px; // Valeur élevée pour s'adapter au contenu
-                            padding-top: 0;
-                            padding-bottom: var(--space-m);
-                        }
-                    }
-
                     &:hover {
                         transform: translateY(-4px);
                     }
 
-                    // Fix pour Safari iOS
-                    @supports (-webkit-overflow-scrolling: touch) {
-
-                        &[open] .faq-body,
-                        &.is-open .faq-body {
-                            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-                        }
-                    }
-
                     summary {
+                        // ✅ BOUTON ACCORDÉON W3SCHOOLS
                         list-style: none;
                         display: flex;
                         align-items: center;
@@ -882,8 +859,8 @@ section.rules {
                         padding: var(--space-m);
                         padding-right: calc(var(--chev-width) + var(--space-m) * 4);
                         outline: none;
+                        transition: background-color 0.4s; // W3Schools transition
 
-                        // Focus states pour accessibilité
                         &:focus-visible {
                             outline: 2px solid var(--ColorPrimary, #007acc);
                             outline-offset: 2px;
@@ -903,7 +880,6 @@ section.rules {
                             padding-right: calc(var(--chev-width) + var(--space-xs) * 4);
                         }
 
-                        // Masquer les marqueurs par défaut
                         &::-webkit-details-marker {
                             display: none;
                         }
@@ -934,21 +910,30 @@ section.rules {
                         img.chev {
                             width: var(--chev-width);
                             height: auto;
-                            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                            transition: transform 0.4s ease;
                             position: absolute;
                             right: var(--space-m);
                             top: 50%;
                             transform: translateY(-50%);
                             transform-origin: 50% 50%;
                         }
+
+                        // ✅ ÉTAT ACTIF (classe ajoutée par JS)
+                        &.active {
+                            background-color: rgba(255, 255, 255, 0.1); // Changement de fond comme W3Schools
+
+                            img.chev {
+                                transform: translateX(-25%) translateY(-50%);
+                            }
+                        }
                     }
 
                     .faq-body {
-                        overflow: hidden;
-                        max-height: 0;
-                        opacity: 0;
-                        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                        // ✅ PANEL W3SCHOOLS SIMPLE
                         padding: 0 var(--space-m);
+                        background-color: var(--ColorWhite);
+                        display: none; // Caché par défaut
+                        overflow: hidden;
 
                         >* {
                             margin: 1rem 0 1.5rem;
@@ -968,40 +953,14 @@ section.rules {
                             }
 
                             &:first-child {
-                                margin-top: 0;
+                                margin-top: 1rem;
                             }
 
                             &:last-child {
-                                margin-bottom: 0;
+                                margin-bottom: 1rem;
                             }
                         }
                     }
-                }
-            }
-        }
-
-        // Media queries pour performance mobile
-        @media (prefers-reduced-motion: reduce) {
-            #faq .faq-item {
-                transition: none;
-
-                .faq-body {
-                    transition: opacity 0.2s ease;
-                }
-
-                summary img.chev {
-                    transition: transform 0.2s ease;
-                }
-            }
-        }
-
-        // High contrast mode support
-        @media (prefers-contrast: high) {
-            #faq .faq-item {
-                border: 2px solid currentColor;
-
-                summary:focus-visible {
-                    outline: 3px solid currentColor;
                 }
             }
         }
