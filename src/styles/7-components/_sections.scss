@@ -395,14 +395,6 @@ section.tickets {
                             img {
                                 transition: .3s all ease-in-out;
                                 height: calc(var(--space-xl) + 0.5em);
-                                
-                                // Fix SVG pixelisation iOS
-                                -webkit-backface-visibility: hidden;
-                                transform: translateZ(0);
-                                will-change: transform, filter;
-                                
-                                // Force high quality rendering
-                                image-rendering: -webkit-optimize-contrast;
                             }
                         }
                     }
