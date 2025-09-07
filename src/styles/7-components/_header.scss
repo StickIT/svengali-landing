@@ -11,7 +11,7 @@
     /* lisse */
     --ease-back: cubic-bezier(.22, .61, .36, 1);
     /* léger ressort */
-    --size-btn-video: clamp(5rem, 20vw, 11rem);
+    --size-btn-video: clamp(5rem, 30vw, 11rem);
     --ease-btn-video: cubic-bezier(.22, .61, .36, 1);
 }
 
@@ -107,16 +107,17 @@
     }
 
     25% {
-        transform: translateX(-2px) translateY(-10px) rotate(-18deg) scale(1.05);
+        transform: translateX(-3.125%) translateY(-15.625%) rotate(-18deg) scale(1.05);
     }
 
     50% {
-        transform: translateX(-6px) translateY(2px) rotate(-22deg) scale(1);
+        transform: translateX(-9.375%) translateY(3.125%) rotate(-22deg) scale(1);
     }
 
     75% {
-        transform: translateX(-4px) translateY(-14px) rotate(-4deg) scale(1.05);
+        transform: translateX(-6.25%) translateY(-21.875%) rotate(-4deg) scale(1.05);
     }
+
 }
 
 header.hero {
@@ -124,15 +125,15 @@ header.hero {
     // min-height: 100svh; 
     overflow: clip;
 
-    @include responsive ('md') {
-        height: 70svh;
+    // @include responsive ('md') {
+    //     height: 70svh;
 
-        section.stage {
-            min-height: 70svh !important;
-        }
-    }
+    //     section.stage {
+    //         min-height: 70svh !important;
+    //     }
+    // }
 
-    #herocontent{
+    #herocontent {
         position: absolute;
         top: 0;
         left: 0;
@@ -329,6 +330,10 @@ header.hero {
             object-fit: cover;
             z-index: 1;
             filter: grayscale(1);
+
+            @include responsive ('sm') {
+                padding: 25svh 0;
+            }
         }
 
         .curtain-bottoms {
@@ -349,6 +354,15 @@ header.hero {
                         rgba(var(--ColorBlack-RGB), 1) 100%);
                 pointer-events: none;
                 z-index: 3;
+
+                @include responsive ('sm') {
+                    background:
+                        radial-gradient(circle at center,
+                            rgba(var(--ColorBlack-RGB), .2) 0%,
+                            rgba(var(--ColorBlack-RGB), .2) 30%,
+                            rgba(var(--ColorBlack-RGB), 1) 50%,
+                            rgba(var(--ColorBlack-RGB), 1) 100%);
+                }
             }
         }
 
@@ -412,6 +426,17 @@ header.hero {
             z-index: 3;
             /* au-dessus des Bottom */
             filter: drop-shadow(0 10px 40px rgba(var(--ColorBlack-RGB), .50));
+
+            @include responsive ('lg') {
+                height: 60%;
+                width: 30%;
+            }
+
+            @include responsive ('sm') {
+                height: 60%;
+                width: 30%;
+                min-width: 30%;
+            }
         }
     }
 }

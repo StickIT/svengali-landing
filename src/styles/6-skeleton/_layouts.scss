@@ -18,6 +18,6 @@ body {
     width: 100%;
     margin: 0 auto;
     max-width: var(--container-max-width);
-    padding: 2rem 1rem; // fallback
-    padding: 2rem clamp(var(--spacing-medium), 5vi, var(--space-2xl));
+    padding: 0 1rem; // fallback
+    padding: 0 clamp(var(--spacing-medium), 5vi, var(--space-2xl));
 }

@@ -23,6 +23,10 @@
             padding: 0.75rem 1rem 1rem 1rem; 
         }
 
+        @include responsive ('sm') {
+            padding: 0.5rem 1rem .75rem 1rem; 
+        }
+
         &::before {
             content: "";
             position: absolute;

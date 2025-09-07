@@ -28,9 +28,9 @@
         .top {
             display: flex;
             flex-direction: row;
-            padding-top: var(--space-2xl);
-            padding-bottom: var(--space-xl);
-            gap: var(--space-xl);
+            padding-top: calc(var(--section-spacing) * 1);
+            padding-bottom: calc(var(--section-spacing) * 0.75);
+            gap: calc(var(--section-spacing) * 1);
 
             @include responsive ('lg') {
                 flex-direction: column;
@@ -120,7 +120,7 @@
                     display: flex;
                     align-items: stretch; /* aligne les hauteurs */
                     width: 100%;
-                    margin-top: 1.5rem;
+                    margin-top: var(--space-m);
 
                     input {
                         flex: 1; /* occupe tout l’espace restant */
