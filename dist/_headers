@@ -1,5 +1,23 @@
+# Cache des assets avec hash pour 1 an
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Cache des fonts pour 1 an
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache des images pour 1 an  
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache des vidéos pour 1 an
+/video/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Pas de cache pour le HTML
+/*.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Cache court pour les autres fichiers
 /*
-  Cache-Control: no-cache
+  Cache-Control: public, max-age=3600
