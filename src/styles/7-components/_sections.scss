@@ -388,13 +388,23 @@ section.tickets {
                             &:hover {
                                 img {
                                     transform: translateY(-2px);
-                                    // filter: brightness(1.1) contrast(1.1);
+                                    filter: brightness(1.1) contrast(1.1);
                                 }
                             }
 
                             img {
                                 transition: .3s all ease-in-out;
                                 height: calc(var(--space-xl) + 0.5em);
+                                
+                                // Fix SVG pixelisation iOS
+                                -webkit-backface-visibility: hidden;
+                                transform: translateZ(0);
+                                will-change: transform, filter;
+                                
+                                // Force high quality rendering
+                                image-rendering: -webkit-optimize-contrast;
+                                image-rendering: crisp-edges;
+                                shape-rendering: geometricPrecision;
                             }
                         }
                     }
