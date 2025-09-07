@@ -846,7 +846,7 @@ section.rules {
                     }
 
                     summary {
-                        // ✅ BOUTON ACCORDÉON W3SCHOOLS
+                        // ✅ STYLE BOUTON W3SCHOOLS
                         list-style: none;
                         display: flex;
                         align-items: center;
@@ -910,7 +910,7 @@ section.rules {
                         img.chev {
                             width: var(--chev-width);
                             height: auto;
-                            transition: transform 0.4s ease;
+                            transition: transform 0.3s ease;
                             position: absolute;
                             right: var(--space-m);
                             top: 50%;
@@ -918,10 +918,8 @@ section.rules {
                             transform-origin: 50% 50%;
                         }
 
-                        // ✅ ÉTAT ACTIF (classe ajoutée par JS)
+                        // ✅ ANIMATION FLÈCHE ACTIVE
                         &.active {
-                            background-color: rgba(255, 255, 255, 0.1); // Changement de fond comme W3Schools
-
                             img.chev {
                                 transform: translateX(-25%) translateY(-50%);
                             }
@@ -929,11 +927,12 @@ section.rules {
                     }
 
                     .faq-body {
-                        // ✅ PANEL W3SCHOOLS SIMPLE
+                        // ✅ ANIMATION PANEL W3SCHOOLS EXACTE
                         padding: 0 var(--space-m);
                         background-color: var(--ColorWhite);
-                        display: none; // Caché par défaut
+                        max-height: 0; // ✅ Fermé par défaut
                         overflow: hidden;
+                        transition: max-height 0.2s ease-out; // ✅ W3Schools exact
 
                         >* {
                             margin: 1rem 0 1.5rem;
@@ -964,5 +963,22 @@ section.rules {
                 }
             }
         }
+
+        // Media queries inchangées
+        @media (prefers-reduced-motion: reduce) {
+            #faq .faq-item {
+                transition: none;
+
+                .faq-body {
+                    transition: opacity 0.2s ease;
+                }
+
+                summary img.chev {
+                    transition: transform 0.2s ease;
+                }
+            }
+        }
+
+
     }
 }

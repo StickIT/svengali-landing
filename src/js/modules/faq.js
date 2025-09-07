@@ -1,21 +1,22 @@
-// src/js/modules/faq.js
+// src/js/modules/faq.js - Solution définitive
 export function initFaq() {
   const acc = document.querySelectorAll('.faq .faq-item summary');
   
-  for (let i = 0; i < acc.length; i++) {
-    acc[i].addEventListener('click', function(e) {
-      e.preventDefault(); // Empêcher le comportement natif <details>
+  acc.forEach(button => {
+    const panel = button.nextElementSibling; // .faq-body
+    
+    button.addEventListener('click', function(e) {
+      e.preventDefault(); // ✅ CRUCIAL : Empêche le comportement natif <details>
       
-      // Toggle class active sur le bouton
+      // Toggle classe active sur le bouton (pour la flèche)
       this.classList.toggle('active');
       
-      // Toggle display block/none sur le panel
-      const panel = this.nextElementSibling;
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
+      // Animation W3Schools exacte
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
       } else {
-        panel.style.display = "block";
+        panel.style.maxHeight = panel.scrollHeight + 'px';
       }
     });
-  }
+  });
 }
