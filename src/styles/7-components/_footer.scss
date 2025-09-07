@@ -59,7 +59,7 @@
                 .content {
                     display: flex;
                     flex-direction: column;
-                    gap: var(--space-xs);
+                    gap: var(--space-2xs);
 
                     @include responsive ('xs') {
                         align-items: center;
@@ -77,6 +77,7 @@
                         margin: 0;
                         color: var(--ColorGreyLight);
                         max-width: 260px;
+                        margin-bottom: var(--space-3xs);
                     }
 
                     ul.social {

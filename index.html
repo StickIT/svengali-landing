@@ -44,6 +44,26 @@
 
     gtag('config', 'G-6CSEFC9FM6');
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href*="tablecheck.com"]').forEach(function(link) {
+            link.addEventListener('click', function() {
+                var url = new URL(this.href);
+                var campaign = url.searchParams.get('utm_campaign') || 'unknown';
+                var content = url.searchParams.get('utm_content') || 'unknown';
+                
+                if(typeof gtag === 'function') {
+                    gtag('event', 'tablecheck_click', {
+                        'event_category': 'Outbound Link',
+                        'event_label': campaign,
+                        'link_url': this.href,
+                        'button_type': content
+                    });
+                }
+            });
+        });
+    });
+  </script>
 </head>
 
 <body>
@@ -65,7 +85,7 @@
         <li><a class="link" href="#location">The Location</a></li>
         <li><a class="link" href="#rules">Rules & FAQ</a></li>
         <li>
-          <a class="btn btn--primary" href="https://www.tablecheck.com/en/svengali/reserve/message?utm_source=website" target="_blank">
+          <a class="btn btn--primary" href="https://www.tablecheck.com/en/svengali/reserve/message?utm_source=svengali&utm_medium=website&utm_campaign=mobile_menu&utm_content=buy_tickets" target="_blank" rel="noopener">
             <span class="label">Buy Tickets</span>
             <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -77,16 +97,14 @@
       <ul class="social">
         <li>
           <a class="btn btn--primary btn--circle btn--red" href="https://www.instagram.com/svengali_kyoto/"
-            target="_blank">
+            target="_blank" rel="noopener noreferrer">
             <img src="/images/IconIG.svg" alt="Instagram">
-            </svg>
           </a>
         </li>
         <li>
-          <a class="btn btn--primary btn--circle btn--red" href="https://share.google/6FLWX7GjxzLOa8IcW"
-            target="_blank">
+          <a class="btn btn--primary btn--circle btn--red" href="https://maps.app.goo.gl/XnceyyEN4nxY9kwy7"
+            target="_blank" rel="noopener noreferrer">
             <img src="/images/IconMap.svg" alt="Google Map">
-            </svg>
           </a>
         </li>
       </ul>
@@ -110,23 +128,21 @@
         </div>
         <div class="promo">
           <span><b>SPECIAL OFFER!</b> – <span class="num">¥5,000</span> discount on every tickets, until <span
-              class="num">13</span><sup>th</sup> January <span class="num">2026</span> – <a class="link" href="#">GET
+              class="num">13</span><sup>th</sup> January <span class="num">2026</span> – <a class="link" href="https://www.tablecheck.com/en/svengali/reserve/message?utm_source=svengali&utm_medium=website&utm_campaign=promo_header&utm_content=special_offer" target="_blank" rel="noopener">GET
               YOUR
               TICKETS!</a></span>
         </div>
         <ul class="social">
           <li>
             <a class="btn btn--primary btn--circle btn--red" href="https://www.instagram.com/svengali_kyoto/"
-              target="_blank">
+              target="_blank" rel="noopener noreferrer">
               <img src="/images/IconIG.svg" alt="Instagram">
-              </svg>
             </a>
           </li>
           <li>
-            <a class="btn btn--primary btn--circle btn--red" href="https://share.google/6FLWX7GjxzLOa8IcW"
-              target="_blank">
+            <a class="btn btn--primary btn--circle btn--red" href="https://maps.app.goo.gl/XnceyyEN4nxY9kwy7"
+              target="_blank" rel="noopener noreferrer">
               <img src="/images/IconMap.svg" alt="Google Map">
-              </svg>
             </a>
           </li>
         </ul>
@@ -136,7 +152,7 @@
 
     <nav id="navbar" class="nav">
       <div class="mobile">
-        <a class="btn btn--primary icon">
+        <a class="btn btn--primary icon" href="https://www.tablecheck.com/en/svengali/reserve/message?utm_source=svengali&utm_medium=website&utm_campaign=mobile_nav&utm_content=icon_button" target="_blank" rel="noopener">
           <img src="/images/IconTicket.svg" alt="Buy Tickets">
         </a>
         <div class="logo">
@@ -155,8 +171,8 @@
           <img src="/images/Logo_Svengali_Light.png" alt="Svengali - House of Curiosities">
         </div>
         <div class="right">
-          <a class="link" href="#story">Rules & FAQ</a>
-          <a class="btn btn--primary">
+          <a class="link" href="#rules">Rules & FAQ</a>
+          <a class="btn btn--primary" href="https://www.tablecheck.com/en/svengali/reserve/message?utm_source=svengali&utm_medium=website&utm_campaign=desktop_nav&utm_content=buy_tickets" target="_blank" rel="noopener">
             <span class="label">Buy Tickets</span>
           </a>
         </div>
@@ -174,7 +190,7 @@
         </div>
         <div class="right">
           <a class="link" href="#rules">Rules & FAQ</a>
-          <a class="btn btn--primary">
+          <a class="btn btn--primary" href="https://www.tablecheck.com/en/svengali/reserve/message?utm_source=svengali&utm_medium=website&utm_campaign=hero_nav&utm_content=buy_tickets" target="_blank" rel="noopener">
             <span class="label">Buy Tickets</span>
           </a>
         </div>
@@ -215,7 +231,7 @@
           <h1>Join the Svengali Gatherings</h1>
           <p><span class="num">6:00</span> PM or <span class="num">9:00</span> PM <span class="sep">|</span> <span
               class="jump">Online Reservation Only</span></p>
-          <a class="btn btn--primary">
+          <a class="btn btn--primary" href="https://www.tablecheck.com/en/svengali/reserve/message?utm_source=svengali&utm_medium=website&utm_campaign=main_cta&utm_content=join_gatherings" target="_blank" rel="noopener">
             <span class="label">Buy Tickets Now</span>
             <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -230,7 +246,7 @@
           <h2>Svengali invites you in his castle in the hearth of Kyoto</h2>
           <p><span class="num">100</span> years after Svengali's legendary parties, we keep the spirit alive by reviving
             the gathering</p>
-          <a class="btn btn--primary btn--red" href="https://share.google/6FLWX7GjxzLOa8IcW" target="_blank">
+          <a class="btn btn--primary btn--red" href="#location" target="_blank" rel="noopener noreferrer">
             <span class="label">See the Location</span>
             <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -243,22 +259,23 @@
       <section class="presentation main-section" id="story">
         <div class="container reveal">
           <div class="left">
-            <img src="/images/svengali-poster-with-frame-show.webp" alt="">
+            <img src="/images/svengali-poster-with-frame-show.webp" alt="Svengali theater poster showing mysterious masked performers in ornate frame">
           </div>
           <div class="right">
             <h2>The House of Curiosities, an unique immersive experience</h2>
             <div class="text-content">
-              <p>The company <a class="link" href="#" target="_blank">Abra-Cadabra</a>, creator of the well acclaimed
-                experimental cocktail lounge in Kyoto, l’<a class="link" href="https://www.instagram.com/escamoteurbar/"
-                  target="_blank">Escamoteur</a> Bar, invites you to experience their second chapter.</p>
-              <p>The House of Curiosities offers a unique theater experience, a strange, intimate, and freaky cabaret
+              <p>The company 
+                <!-- <a class="link" href="https://abra-cadabra.jp" target="_blank" rel="noopener noreferrer">Abra-Cadabra</a> -->
+                Abra-Cadabra, creator of the well acclaimed experimental cocktail lounge in Kyoto, l'<a class="link" href="https://www.instagram.com/escamoteurbar/"
+                  target="_blank" rel="noopener noreferrer">Escamoteur</a> Bar, invites you to experience their second chapter.</p>
+              <p>The House of Curiosities offers a unique theater experience, a strange, intimate, and freaky cabaret
                 where boundaries between the stage and audience vanish.</p>
               <p>Each evening, Svengali hosts various talented artists, making each night in central Kyoto unique and
                 cinematic.</p>
-              <p>Step into the world of Svengali, a transformative journey blending circus, the world of magic and
+              <p>Step into the world of Svengali, a transformative journey blending circus, the world of magic and
                 storytelling.</p>
             </div>
-            <a class="btn btn--primary">
+            <a class="btn btn--primary" href="https://www.tablecheck.com/en/svengali/reserve/message?utm_source=svengali&utm_medium=website&utm_campaign=story_section&utm_content=get_ticket" target="_blank" rel="noopener">
               <span class="label">Get your Ticket Now</span>
               <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -305,7 +322,7 @@
                       class="num">13</span><sup>th</sup> January</span>
                 </div>
                 <footer>
-                  <a class="cta" href="https://www.tablecheck.com/en/svengali/reserve/message?utm_source=website" title="Book Now">
+                  <a class="cta" href="https://www.tablecheck.com/en/svengali/reserve/message?utm_source=svengali&utm_medium=website&utm_campaign=tickets&utm_content=silver_ticket" target="_blank" rel="noopener" title="Book Now">
                     <img src="/images/ticket-cta-silver.svg" alt="">
                   </a>
                 </footer>
@@ -338,7 +355,7 @@
                       class="num">13</span><sup>th</sup> January</span>
                 </div>
                 <footer>
-                  <a class="cta" href="https://www.tablecheck.com/en/svengali/reserve/message?utm_source=website" title="Book Now">
+                  <a class="cta" href="https://www.tablecheck.com/en/svengali/reserve/message?utm_source=svengali&utm_medium=website&utm_campaign=tickets&utm_content=gold_ticket" target="_blank" rel="noopener" title="Book Now">
                     <img src="/images/ticket-cta-gold.svg" alt="">
                   </a>
                 </footer>
@@ -387,7 +404,7 @@
                     <li>Shijo Kawaramachi Bus Stop by Frequent City Bus lines </li>
                   </ul>
                 </div>
-                <a class="btn btn--primary btn--red" href="https://share.google/6FLWX7GjxzLOa8IcW" target="_blank">
+                <a class="btn btn--primary btn--red" href="https://maps.app.goo.gl/XnceyyEN4nxY9kwy7" target="_blank" rel="noopener noreferrer">
                   <span class="label">Get the Direction on Google Maps</span>
                   <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -397,7 +414,7 @@
               </div>
             </div>
             <div class="right">
-              <img src="/images/svengali-map.webp" alt="">
+              <img src="/images/svengali-map.webp" alt="Map showing Svengali location in Kyoto's Nakagyo Ward near Gion district">
             </div>
           </article>
         </div>
@@ -405,7 +422,7 @@
 
       <section class="rules main-section" id="rules" aria-labelledby="faq">
         <div class="container reveal">
-          <h2>Svengali’s Rules</h2>
+          <h2>Svengali's Rules</h2>
           <article class="important-message">
             <div class="content">
               <h3>IMPORTANT MESSAGE</h3>
@@ -573,7 +590,7 @@
                 </div>
               </div>
 
-              <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://Question">
+              <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                 <button class="accordion" itemprop="name" aria-expanded="false">
                   <span class="question">Is kids allowed to the show?</span>
                   <img class="chev" src="/images/hand.svg" alt="" aria-hidden="true">
@@ -669,23 +686,21 @@
               <ul class="social">
                 <li>
                   <a class="btn btn--primary btn--circle btn--red" href="https://www.instagram.com/svengali_kyoto/"
-                    target="_blank">
+                    target="_blank" rel="noopener noreferrer">
                     <img src="/images/IconIG.svg" alt="Instagram">
-                    </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="btn btn--primary btn--circle btn--red" href="https://share.google/6FLWX7GjxzLOa8IcW"
-                    target="_blank">
+                  <a class="btn btn--primary btn--circle btn--red" href="https://maps.app.goo.gl/XnceyyEN4nxY9kwy7"
+                    target="_blank" rel="noopener noreferrer">
                     <img src="/images/IconMap.svg" alt="Google Map">
-                    </svg>
                   </a>
                 </li>
               </ul>
             </div>
           </div>
           <div class="right subscribe" id="newsletter">
-            <h2>Stay under Svengali’s spell</h2>
+            <h2>Stay under Svengali's spell</h2>
             <p>Subscribe for updates, mysteries, and special offers</p>
             <form id="subscribe-form" action="https://formspree.io/f/mldbgzly" method="POST">
               <input type="email" name="email" placeholder="Your email address" required>
@@ -699,15 +714,15 @@
               </button>
             </form>
             <p id="form-message">
-              Thank you! You’re now in the inner circle.
+              Thank you! You're now in the inner circle.
             </p>
           </div>
         </div>
         <div class="bottom">
           <span class="copyright">© <span class="num">2026</span> Svengali, Kyoto. All rights reserved. A company of
             ABRA-CADABRA Ltd.</span>
-          <span class="sep">|</span>
-          <a href="#">Privacy Policy</a>
+          <!-- <span class="sep">|</span>
+          <a href="/privacy-policy">Privacy Policy</a> -->
         </div>
       </div>
     </footer>
