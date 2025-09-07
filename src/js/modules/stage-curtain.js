@@ -2,6 +2,58 @@ export function initStageCurtain() {
     const stage = document.querySelector('.stage');
     if (!stage) return;
 
+    // ⭐ NOUVEAU : Vérifier si l'animation doit se jouer
+    const shouldPlayAnimation = () => {
+        // Ne pas jouer l'animation si :
+        // 1. L'utilisateur a déjà scrollé (position Y > 100px)
+        // 2. L'animation a déjà été jouée dans cette session
+        const hasScrolled = window.scrollY > 100;
+        const animationPlayed = sessionStorage.getItem('curtainAnimationPlayed');
+        
+        return !hasScrolled && !animationPlayed;
+    };
+
+    // ⭐ NOUVEAU : Si l'animation ne doit pas se jouer, ouvrir directement
+    if (!shouldPlayAnimation()) {
+        console.log('⏭️ Skipping curtain animation - user has scrolled or animation already played');
+        
+        // Ouvrir les rideaux immédiatement
+        stage.classList.add('is-open');
+        
+        // Démarrer la vidéo si elle existe
+        const video = stage.querySelector('.backdrop');
+        if (video && video.paused) {
+            video.play().catch(() => {
+                /* Gestion silencieuse de l'erreur autoplay */
+            });
+        }
+        
+        // S'assurer que tous les éléments sont visibles immédiatement
+        const elementsToReveal = [
+            // '.sticky-top-nav',
+            '.header-nav', 
+            '.push-block.booking .content',
+            '.hero-cta'
+        ];
+        
+        elementsToReveal.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                element.style.opacity = '1';
+                element.style.visibility = 'visible';
+                element.classList.add('is-revealed');
+                
+                // Ne pas modifier le transform du hero-cta (garde son centrage CSS)
+                if (selector !== '.hero-cta') {
+                    element.style.transform = 'translateY(0)';
+                }
+            }
+        });
+        
+        return; // Sortir de la fonction - pas d'animation
+    }
+
+    // 🎭 VOTRE CODE EXISTANT - Animation complète des rideaux
     const video = stage.querySelector('.backdrop');
     const bottoms = stage.querySelectorAll('.bottom');
 
@@ -91,6 +143,13 @@ export function initStageCurtain() {
                 }
             });
         }, REVEAL_START_DELAY);
+
+        // ⭐ NOUVEAU : Marquer l'animation comme jouée après la fin
+        const totalAnimationTime = REVEAL_START_DELAY + (elementsToReveal.length * REVEAL_DELAY) + 1000;
+        setTimeout(() => {
+            sessionStorage.setItem('curtainAnimationPlayed', 'true');
+            console.log('🎭 Curtain animation completed and marked as played');
+        }, totalAnimationTime);
     };
 
     /**
@@ -126,5 +185,9 @@ export function initStageCurtain() {
     checkImagesAndOpen();
 
     // Sécurité : ouverture forcée après 4 secondes
-    setTimeout(openCurtains, 4000);
+    setTimeout(() => {
+        if (!stage.classList.contains('is-open')) {
+            openCurtains();
+        }
+    }, 4000);
 }

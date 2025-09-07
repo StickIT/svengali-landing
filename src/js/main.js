@@ -16,7 +16,7 @@ import '../styles/main.scss';
 
 // Features
 import { initNavigation } from './modules/navigation.js';
-import { initSliders } from './modules/slider.js';
+// import { initSliders } from './modules/slider.js';
 import { initVideoModal } from './modules/video-modal.js';
 import { initReveal } from './modules/reveal.js';
 import { initSmoothScroll } from './modules/smooth-scroll.js';
@@ -29,13 +29,13 @@ import { initNewsletter } from './modules/newsletter.js';
 
 window.addEventListener('DOMContentLoaded', () => {
   initAdjustPadding();
+  initStageCurtain();
+  initHeroLoader();
   initNavigation();
   initSideNav();
-  initSliders();
-  initVideoModal();
   initReveal();
+  // initSliders();
+  initVideoModal();
   initSmoothScroll();
-  initHeroLoader();
-  initStageCurtain();
   initFaq();
 });
