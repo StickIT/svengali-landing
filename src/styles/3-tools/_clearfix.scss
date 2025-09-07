@@ -14,3 +14,9 @@
     clear: both;
   }
 }
+
+.num, .address, span.num {
+    -webkit-touch-callout: none;
+    -webkit-user-select: text;
+    -webkit-text-size-adjust: none;
+}
