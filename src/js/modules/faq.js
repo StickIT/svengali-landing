@@ -1,6 +1,6 @@
 // src/js/modules/faq.js - Solution définitive
 export function initFaq() {
-  const acc = document.querySelectorAll('.faq .faq-item summary');
+  const acc = document.querySelectorAll('.faq .faq-item .accordion');
   
   acc.forEach(button => {
     const panel = button.nextElementSibling; // .faq-body
