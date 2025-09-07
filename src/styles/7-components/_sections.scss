@@ -843,6 +843,10 @@ section.rules {
 
                     &:hover {
                         transform: translateY(-4px);
+
+                        @include responsive ('md'){
+                            transform: inherit;
+                        }
                     }
 
                     .accordion {
@@ -889,6 +893,10 @@ section.rules {
                             white-space: inherit;
                             font-size: calc(var(--fluid-1) + 0.1em);
                             line-height: 1.25;
+
+                            @include responsive ('sm'){
+                                font-size: var(--fluid-1);
+                            }
 
                             &::before {
                                 content: "";
