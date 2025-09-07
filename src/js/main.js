@@ -29,8 +29,8 @@ import { initNewsletter } from './modules/newsletter.js';
 
 window.addEventListener('DOMContentLoaded', () => {
   initAdjustPadding();
-  initStageCurtain();
   initHeroLoader();
+  initStageCurtain();
   initNavigation();
   initSideNav();
   initReveal();
