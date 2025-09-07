@@ -84,6 +84,28 @@
             var(--shadow-inset);
     }
 
+    &.icon,
+    &.menu{
+        height: 2.5rem;
+        width: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        
+        .label{
+            margin-top: -0.1em;
+        }
+
+        img{
+            width: auto;
+            height: .7rem;
+            opacity: 1;
+            z-index: 2;
+            margin-top: -0.1em;
+        }
+    }
+
     .label{
         text-shadow: var(--text-shadow);
         letter-spacing: .02em;
@@ -105,6 +127,7 @@
         position: relative;
         z-index: 2;
     }
+
 }
 
 .btn--circle{

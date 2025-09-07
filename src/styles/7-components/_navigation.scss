@@ -118,7 +118,7 @@
     width: auto;
 
     @include responsive ('sm') {
-        padding: 1.5rem 1rem .5rem 1rem;
+        padding: 1.75rem .75rem .75rem .75rem;
     }
 
     &::before {
@@ -145,8 +145,8 @@
     .logo {
 
         @include responsive ('sm') {
-            order: 1;
-            margin-right: auto;
+            // order: 1;
+            // margin-right: auto;
         }
 
         img {
@@ -155,7 +155,7 @@
             display: inline-block;
 
             @include responsive ('sm') {
-                max-height: 2rem;
+                max-height: 2.25rem;
                 margin-bottom: .25rem;
                 position: inherit;
                 left: 0;
@@ -168,9 +168,9 @@
     .btn--primary {
         // transform: scale(.95);
 
-        @include responsive ('sm') {
-            order: 2;
-        }
+        // @include responsive ('sm') {
+        //     order: 2;
+        // }
     }
 
     a#openMenu {
