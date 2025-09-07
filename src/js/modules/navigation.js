@@ -1,7 +1,8 @@
 export function initNavigation() {
   const navbar = document.getElementById('navbar');
   const topNav = document.querySelector('.top-nav');
-  if (!navbar || !topNav) return;
+  const heroContent = document.getElementById('herocontent');
+  if (!navbar || !topNav || !heroContent) return;
 
   // Mesure les hauteurs
   const updatePositions = () => {
@@ -12,16 +13,19 @@ export function initNavigation() {
     navbar.dataset.topNavH = topNavH;
     navbar.dataset.navbarH = navbarH;
 
-    // Si visible → applique hauteur de top-nav
+    // APPLIQUE LE TOP À HEROCONTENT DÈS LE DÉBUT (une seule fois)
+    heroContent.style.top = `${topNavH}px`;
+
+    // Si visible - applique hauteur de top-nav
     if (navbar.classList.contains('is-visible')) {
       navbar.style.top = `${topNavH}px`;
     } else {
-      // Si caché → applique -navbarH
+      // Si caché - applique -navbarH
       navbar.style.top = `-${navbarH}px`;
     }
   };
 
-  // Gestion scroll
+  // Gestion scroll - SEULEMENT pour navbar, pas pour heroContent
   const onScroll = () => {
     const y = window.scrollY || document.documentElement.scrollTop;
     const topNavH = parseFloat(navbar.dataset.topNavH) || 0;
@@ -30,9 +34,11 @@ export function initNavigation() {
     if (y > 140) {
       navbar.classList.add('is-visible');
       navbar.style.top = `${topNavH}px`;
+      // heroContent garde sa position fixe
     } else {
       navbar.classList.remove('is-visible');
       navbar.style.top = `-${navbarH}px`;
+      // heroContent garde sa position fixe
     }
   };
 

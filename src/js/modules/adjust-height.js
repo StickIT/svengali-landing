@@ -1,68 +1,44 @@
-// export function initAdjustPadding() {
-//   const ref = document.querySelector('.booking');      // élément de référence
-//   const target = document.querySelector('section.intro'); // celui qui reçoit le padding
-
-//   if (!ref || !target) return;
-
-//   const update = () => {
-//     const halfHeight = ref.offsetHeight / 2;
-//     target.style.paddingTop = `${halfHeight + 128}px`; // 64px = 4rem
-//   };
-
-//   // premier calcul
-//   update();
-
-//   // écoute les resize de la fenêtre
-//   window.addEventListener('resize', update);
-
-//   // écoute aussi les changements de taille de l’élément ref
-//   if ('ResizeObserver' in window) {
-//     const ro = new ResizeObserver(update);
-//     ro.observe(ref);
-//   }
-// }
-
-// const remToPx = (rem) => {
-//   return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
-// };
-
-// export function initAdjustPadding() {
-//   const ref = document.querySelector('.booking');      // élément de référence
-//   const target = document.querySelector('section.intro'); // celui qui reçoit le padding
-
-//   if (!ref || !target) return;
-
-//   const update = () => {
-//     const halfHeight = ref.offsetHeight / 2;         // en px
-//     const fourRem = remToPx(8);                      // conversion rem -> px
-//     const total = halfHeight + fourRem;
-
-//     target.style.paddingTop = `${total}px`;          // applique en px
-//   };
-
-//   update();
-
-//   window.addEventListener('resize', update);
-//   if ('ResizeObserver' in window) {
-//     new ResizeObserver(update).observe(ref);
-//   }
-// }
-
 export function initAdjustPadding() {
-  const ref = document.querySelector('.booking');      // élément de référence
-  const target = document.querySelector('section.intro'); // celui qui reçoit le padding
+  const bookingRef = document.querySelector('.booking');      // élément de référence
+  const introTarget = document.querySelector('section.intro'); // celui qui reçoit le padding
+  const heroContent = document.getElementById('herocontent');
+  const heroCta = document.querySelector('.hero-cta');
+  const headerLogo = document.querySelector('.header-nav .logo'); // logo dans header-nav
 
-  if (!ref || !target) return;
+  if (!bookingRef || !introTarget) return;
 
   const update = () => {
-    const halfHeight = ref.offsetHeight / 2; // valeur en px
-    target.style.setProperty('--half-ref-h', `${halfHeight}px`);
+    // Logique existante pour section.intro
+    const halfHeight = bookingRef.offsetHeight / 2;
+    introTarget.style.setProperty('--half-ref-h', `${halfHeight}px`);
+
+    // Nouvelle logique pour .hero-cta centré entre logo et booking
+    if (heroContent && heroCta && headerLogo) {
+      const heroContentHeight = heroContent.offsetHeight;  // Hauteur totale disponible
+      const logoHeight = headerLogo.offsetHeight;          // Espace occupé en haut
+      const halfBookingHeight = halfHeight;                // Espace occupé en bas
+
+      // Calcul de la position pour centrer dans l'espace disponible
+      // (hauteurTotale + espaceHaut - espaceBas) / 2
+      const topValue = `calc((100% + ${logoHeight}px - ${halfBookingHeight}px) / 2)`;
+
+      heroCta.style.top = topValue;
+    }
   };
 
   update();
 
   window.addEventListener('resize', update);
   if ('ResizeObserver' in window) {
-    new ResizeObserver(update).observe(ref);
+    new ResizeObserver(update).observe(bookingRef);
+    if (headerLogo) {
+      new ResizeObserver(update).observe(headerLogo);
+    }
+    if (introTarget) {
+      new ResizeObserver(update).observe(introTarget);
+    }
+    if (heroContent) {
+      new ResizeObserver(update).observe(heroContent);
+    }
   }
 }
