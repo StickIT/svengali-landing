@@ -29,31 +29,6 @@
     
 }
 
-// /* SCSS */
-// @function to-rgb-list($hex) { @return #{red($hex)}, #{green($hex)}, #{blue($hex)}; }
-
-// :root {
-//   /* exemples avec ta palette */
-//   --ColorBlack: #06070C;
-//   --ColorBlack-rgb: #{to-rgb-list(#06070C)};
-
-//   --ColorOnyx: #0A1A3D;
-//   --ColorOnyx-rgb: #{to-rgb-list(#0A1A3D)};
-// }
-
-// // Very basic support for a dark color scheme
-// @media (prefers-color-scheme: dark) {
-//     :root {
-//         --color-mode: 'dark';
-//     }
-
-//     :root:not([data-user-color-scheme]) {
-//         --BackgroundColor: #1A1A1A;
-//         --TextColor: #eeeeee;
-//         --PrimaryColor: #A15CFF;
-//     }
-// }
-
 // $bg: #0a0a0a;
 // $fg: #f3f3f3;
 // $muted: #c9c9c9;

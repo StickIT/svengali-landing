@@ -9,7 +9,10 @@ export function initReveal() {
         obs.unobserve(entry.target);
       }
     });
-  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.2 });
+  }, { 
+    rootMargin: '0px 0px -5% 0px', // Plus tôt : déclenche à 70% du viewport
+    threshold: 0 // Dès que le premier pixel entre
+  });
 
   items.forEach(el => io.observe(el));
 }
