@@ -80,6 +80,7 @@
 
             &>span {
                 white-space: inherit;
+                word-break: auto-phrase;
             }
 
             @include responsive('xl') {
