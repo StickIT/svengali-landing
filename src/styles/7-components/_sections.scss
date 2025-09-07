@@ -218,7 +218,7 @@ section.tickets {
             }
 
             @include responsive ('md') {
-                flex-direction: column;
+                flex-direction: column-reverse;
                 justify-content: center;
                 align-items: center;
 
@@ -845,21 +845,23 @@ section.rules {
                         transform: translateY(-4px);
                     }
 
-                    summary {
-                        // ✅ STYLE BOUTON W3SCHOOLS
-                        list-style: none;
+                    .accordion {
+                        background-color: transparent;
+                        color: inherit;
+                        cursor: pointer;
+                        padding: var(--space-m);
+                        width: 100%;
+                        border: none;
+                        text-align: left;
+                        outline: none;
+                        font-size: inherit;
+                        transition: 0.4s;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
                         gap: 1.5rem;
-                        cursor: pointer;
-                        user-select: none;
-                        width: 100%;
                         position: relative;
-                        padding: var(--space-m);
                         padding-right: calc(var(--chev-width) + var(--space-m) * 4);
-                        outline: none;
-                        transition: background-color 0.4s; // W3Schools transition
 
                         &:focus-visible {
                             outline: 2px solid var(--ColorPrimary, #007acc);
@@ -871,21 +873,13 @@ section.rules {
                             padding-right: calc(var(--chev-width) + var(--space-xs) * 4);
 
                             img.chev {
-                                right: var(--space-xs);
+                                right: var(--space-xs) !important;
                             }
                         }
 
                         @include responsive('xs') {
                             padding: var(--space-xs);
                             padding-right: calc(var(--chev-width) + var(--space-xs) * 4);
-                        }
-
-                        &::-webkit-details-marker {
-                            display: none;
-                        }
-
-                        &::marker {
-                            display: none;
                         }
 
                         .question {
@@ -918,7 +912,6 @@ section.rules {
                             transform-origin: 50% 50%;
                         }
 
-                        // ✅ ANIMATION FLÈCHE ACTIVE
                         &.active {
                             img.chev {
                                 transform: translateX(-25%) translateY(-50%);
@@ -926,22 +919,21 @@ section.rules {
                         }
                     }
 
-                    .faq-body {
-                        // ✅ ANIMATION PANEL W3SCHOOLS EXACTE
+                    .panel {
+                        border-radius: 0.5rem;
                         padding: 0 var(--space-m);
                         background-color: var(--ColorWhite);
-                        max-height: 0; // ✅ Fermé par défaut
+                        max-height: 0;
                         overflow: hidden;
-                        transition: max-height 0.2s ease-out; // ✅ W3Schools exact
+                        transition: max-height 0.2s ease-out;
 
                         >* {
-                            margin: 1rem 0 1.5rem;
+                            margin: .5rem 0;
                         }
 
                         p {
                             color: var(--ColorDark);
-                            font-size: var(--fluid-1);
-                            margin-bottom: 1rem;
+                            font-size: calc(var(--fluid-1) - 0.05em);
 
                             b {
                                 font-style: italic;
@@ -952,11 +944,15 @@ section.rules {
                             }
 
                             &:first-child {
-                                margin-top: 1rem;
+                                margin-top: 0rem;
                             }
 
                             &:last-child {
-                                margin-bottom: 1rem;
+                                margin-bottom: var(--space-m);
+
+                                @include responsive ('sm') {
+                                    margin-bottom: var(--space-xs);
+                                }
                             }
                         }
                     }
@@ -964,21 +960,18 @@ section.rules {
             }
         }
 
-        // Media queries inchangées
         @media (prefers-reduced-motion: reduce) {
             #faq .faq-item {
                 transition: none;
 
-                .faq-body {
+                .panel {
                     transition: opacity 0.2s ease;
                 }
 
-                summary img.chev {
+                .accordion img.chev {
                     transition: transform 0.2s ease;
                 }
             }
         }
-
-
     }
 }

@@ -1,22 +1,17 @@
-// src/js/modules/faq.js - Solution définitive
+// src/js/modules/faq.js
 export function initFaq() {
-  const acc = document.querySelectorAll('.faq .faq-item .accordion');
-  
-  acc.forEach(button => {
-    const panel = button.nextElementSibling; // .faq-body
-    
-    button.addEventListener('click', function(e) {
-      e.preventDefault(); // ✅ CRUCIAL : Empêche le comportement natif <details>
-      
-      // Toggle classe active sur le bouton (pour la flèche)
-      this.classList.toggle('active');
-      
-      // Animation W3Schools exacte
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
       } else {
-        panel.style.maxHeight = panel.scrollHeight + 'px';
+        panel.style.maxHeight = panel.scrollHeight + "px";
       }
     });
-  });
+  }
 }
