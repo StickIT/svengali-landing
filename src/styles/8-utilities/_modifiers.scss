@@ -1,0 +1,20 @@
+@use "../2-design-tokens/media-queries" as *;
+
+:root{
+    --sticky-top-nav-height: 60px;
+    --navbar-height: 80px;
+    --scroll-offset: calc(var(--sticky-top-nav-height) + var(--navbar-height) - (var(--section-spacing) * 0.5));
+
+    @include responsive ('sm'){
+        --scroll-offset: calc(var(--sticky-top-nav-height) + var(--navbar-height) - (var(--section-spacing) * 1));
+    }
+}
+
+// Appliquer l'offset aux sections ciblées
+#intro,
+#story,
+#location,
+#rules,
+#tickets {
+    scroll-margin-top: var(--scroll-offset);
+}
