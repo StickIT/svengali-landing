@@ -26,7 +26,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { writeFileSync } from 'fs'
 import path from 'path'
 
-// Plugin personnalisé pour générer _headers
+// Plugin pour générer _headers automatiquement
 const generateHeadersPlugin = () => ({
   name: 'generate-headers',
   writeBundle() {
@@ -56,7 +56,7 @@ const generateHeadersPlugin = () => ({
 
     const headersPath = path.resolve('dist', '_headers')
     writeFileSync(headersPath, headersContent)
-    console.log('✅ Fichier _headers généré avec succès!')
+    console.log('✅ Fichier _headers généré pour Cloudflare Pages!')
   }
 })
 
@@ -66,17 +66,17 @@ export default defineConfig({
     assetsDir: 'assets',
     emptyOutDir: true,
     
-    // ⭐ AJOUT : Cache busting avec hash
+    // ⭐ ESSENTIEL : Hash dans les noms de fichiers pour le cache busting
     rollupOptions: {
       output: {
         entryFileNames: 'assets/js/[name]-[hash].js',
         chunkFileNames: 'assets/js/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash][extname]'
+        assetFileNames: 'assets/[ext]/[name]-[hash].[extname]'
       }
     }
   },
   
-  // ⭐ AJOUT : Headers pour le dev
+  // Headers pour le développement
   server: {
     headers: {
       'Cache-Control': 'public, max-age=3600'
@@ -90,7 +90,7 @@ export default defineConfig({
       ]
     }),
     
-    // ⭐ NOUVEAU : Plugin pour générer _headers automatiquement
+    // ⭐ NOUVEAU : Plugin pour générer _headers
     generateHeadersPlugin()
   ]
 })
