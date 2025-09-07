@@ -69,33 +69,80 @@
             }
         }
 
+        // .promo {
+        //     z-index: 2;
+        //     position: absolute;
+        //     left: 50%;
+        //     transform: translateX(-50%);
+        //     text-align: center;
+        //     white-space: nowrap; // une seule ligne en desktop
+        //     font-size: var(--fluid--1);
+
+        //     @include responsive('xl') {
+        //         position: static; // revient dans le flux
+        //         left: auto;
+        //         transform: none;
+        //         display: block;
+        //         width: 100%;
+        //         text-align: center;
+        //         white-space: normal; // 👉 autorise le retour à la ligne
+        //         overflow-wrap: anywhere; // casse au besoin (sécurité)
+        //         hyphens: auto;
+        //     }
+
+        //     &>span {
+        //         white-space: inherit;
+        //         word-break: auto-phrase;
+        //     }
+        // }
+
         .promo {
-            z-index: 2;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            white-space: nowrap; // une seule ligne en desktop
-            font-size: var(--fluid--1);
-
-            &>span {
-                white-space: inherit;
-                word-break: auto-phrase;
-            }
-
-            @include responsive('xl') {
-                // <= 1279px (ton mixin max-width)
-                position: static; // revient dans le flux
-                left: auto;
-                transform: none;
-                display: block;
-                width: 100%;
-                text-align: center;
-                white-space: normal; // 👉 autorise le retour à la ligne
-                overflow-wrap: anywhere; // casse au besoin (sécurité)
-                hyphens: auto;
-            }
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+    font-size: var(--fluid--1);
+    
+    @include responsive('xl') {
+        position: static;
+        left: auto;
+        transform: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+        white-space: normal;
+        overflow-wrap: break-word; /* Remplace anywhere pour Safari */
+        word-break: keep-all; /* Alternative à auto-phrase */
+        hyphens: auto;
+        -webkit-hyphens: auto; /* Préfixe WebKit pour Safari */
+    }
+    
+    &> span {
+        /* Fix spécifique Safari iOS */
+        @supports (-webkit-overflow-scrolling: touch) {
+            word-break: keep-all;
+            -webkit-word-break: keep-all;
+            overflow-wrap: break-word;
+            -webkit-overflow-wrap: break-word;
         }
+        
+        /* Chrome/Edge avec auto-phrase */
+        @supports (word-break: auto-phrase) {
+            white-space: inherit;
+            word-break: auto-phrase;
+        }
+        
+        /* Fallback pour autres navigateurs */
+        @supports not (word-break: auto-phrase) {
+            white-space: inherit;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+    }
+}
+
     }
 }
 
