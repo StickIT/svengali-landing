@@ -440,27 +440,3 @@ header.hero {
         }
     }
 }
-
-/* S'assurer que le blocage fonctionne correctement */
-body.curtain-blocking {
-    overflow: hidden !important;
-}
-
-/* Éviter les sauts de layout */
-.curtain-blocking .stage {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    z-index: 9999 !important;
-}
-
-/* S'assurer que les éléments à révéler restent visibles */
-.curtain-blocking .sticky-top-nav,
-.curtain-blocking .header-nav,
-.curtain-blocking .push-block.booking,
-.curtain-blocking .hero-cta {
-    visibility: visible !important;
-    pointer-events: auto !important;
-}
