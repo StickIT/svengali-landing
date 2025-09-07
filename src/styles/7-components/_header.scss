@@ -1,8 +1,8 @@
 @use "../2-design-tokens/media-queries" as *;
 
 :root {
-    --size-butterfly-width: clamp(2rem, 10vw, 6rem);
-    --size-butterfly-height: clamp(2rem, 10vw, 6rem);
+    --size-butterfly-width: clamp(2.5rem, 14vw, 6rem);
+    --size-butterfly-height: clamp(2.5rem, 14vw, 6rem);
 }
 
 .hero {
@@ -196,13 +196,13 @@ header.hero {
             left: 50%;
             top: 1rem;
 
-            @include responsive ('sm') {
-                min-width: 60vw !important;
+            @include responsive ('lg') {
+                min-width: 45vw;
                 margin-left: 0;
             }
 
-            @include responsive ('lg') {
-                min-width: 45vw;
+            @include responsive ('sm') {
+                min-width: 70vw !important;
                 margin-left: 0;
             }
 
@@ -224,6 +224,11 @@ header.hero {
                 pointer-events: none;
                 animation: butterfly-fly 8s ease-in-out infinite;
                 filter: drop-shadow(0 1px 8px rgba(var(--ColorBlack-RGB, 1)));
+
+                @include responsive ('sm') {
+                    bottom: -50%;
+                    right: -10%
+                }
             }
         }
     }
