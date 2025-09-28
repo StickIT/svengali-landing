@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "title": "Svengali - House of Curiosities in Kyoto",
+    "description": "The House of Curiosities offers a unique theater experience, a strange, intimate, and freaky cabaret where boundaries between the stage and audience vanish in Kyoto.",
+    "og_site_name": "Svengali - House of Curiosities in Kyoto",
+    "og_title": "Svengali - House of Curiosities in Kyoto",
+    "og_description": "The House of Curiosities offers a unique theater experience, a strange, intimate, and freaky cabaret where boundaries between the stage and audience vanish in Kyoto.",
+    "twitter_title": "Svengali - House of Curiosities in Kyoto",
+    "twitter_description": "Experience Kyoto's most immersive cabaret theater"
+  },
+  "nav": {
+    "mobile_menu_aria": "Mobile menu",
+    "close_button_aria": "Close",
+    "story": "The Story",
+    "location": "The Location", 
+    "rules": "Rules & FAQ",
+    "buy_tickets_alt": "Buy Tickets",
+    "menu_alt": "Open Menu"
+  },
+  "promo": {
+    "special_offer": "SPECIAL OFFER!",
+    "discount_text": "discount on every tickets, until",
+    "january": "January",
+    "cta": "GET YOUR TICKETS!"
+  },
+  "cta": {
+    "buy_tickets": "Buy Tickets",
+    "buy_tickets_now": "Buy Tickets Now",
+    "book_now": "Book Now",
+    "get_ticket_now": "Get your Ticket Now",
+    "see_location": "See the Location",
+    "read_rules": "Read our Rules and FAQ",
+    "get_directions": "Get the Direction on Google Maps"
+  },
+  "hero": {
+    "play_trailer_aria": "Play Video Trailer"
+  },
+  "stage": {
+    "aria_label": "Theatre stage with curtains"
+  },
+  "booking": {
+    "title": "Join the Svengali Gatherings",
+    "pm": "PM",
+    "or": "or",
+    "online_only": "Online Reservation Only"
+  },
+  "intro": {
+    "title": "Svengali invites you in his castle in the hearth of Kyoto",
+    "description": "years after Svengali's legendary parties, we keep the spirit alive by reviving the gathering"
+  },
+  "story": {
+    "title": "The House of Curiosities, an unique immersive experience",
+    "poster_alt": "Svengali theater poster showing mysterious masked performers in ornate frame",
+    "paragraph1": "The company Abra-Cadabra, creator of the well acclaimed experimental cocktail lounge in Kyoto, l'Escamoteur Bar, invites you to experience their second chapter.",
+    "paragraph2": "The House of Curiosities offers a unique theater experience, a strange, intimate, and freaky cabaret where boundaries between the stage and audience vanish.",
+    "paragraph3": "Each evening, Svengali hosts various talented artists, making each night in central Kyoto unique and cinematic.",
+    "paragraph4": "Step into the world of Svengali, a transformative journey blending circus, the world of magic and storytelling."
+  },
+  "tickets": {
+    "title": "Choose your Experience",
+    "discount_text": "discount until",
+    "silver": {
+      "title": "Silver Ticket",
+      "access": "Access to the show of 90 minutes",
+      "seating": "Experience the show from the balcony or on the side of the 1st floor",
+      "drinks": "Drinks included",
+      "costume": "Cloak and mask provided"
+    },
+    "gold": {
+      "title": "Gold Ticket", 
+      "access": "Access to the show of 90 minutes",
+      "seating": "Experience the show directly in front of the stage with premium seats",
+      "drinks": "Drinks included",
+      "costume": "Cloak and mask provided"
+    }
+  },
+  "notice": {
+    "title": "Important Notice",
+    "description": "For a smoother experience, please take a moment to read our rules and FAQ before your visit"
+  },
+  "location": {
+    "title": "How to get to Svengali Castle?",
+    "address": "7th Floor, Nakagyo Ward, Bizenjimach, 604-8023 Kyoto, Japan",
+    "access_title": "Access",
+    "metro_title": "Metro",
+    "metro_1": "Gion-Shijo / Sanjo Station Keihan Line",
+    "metro_2": "Kyoto-Kawaramachi Station Hankyu Line", 
+    "metro_3": "Sanjo Station Tozai Line",
+    "bus_title": "BUS",
+    "bus_1": "Shijo Kawaramachi Bus Stop by Frequent City Bus lines",
+    "map_alt": "Map showing Svengali location in Kyoto's Nakagyo Ward near Gion district"
+  },
+  "rules": {
+    "title": "Svengali's Rules",
+    "important_title": "IMPORTANT MESSAGE",
+    "rule1": "Admission is for 16 and above.",
+    "rule2": "Svengali is not responsible for any accidents, injuries, or damages at our venue.",
+    "rule3": "The mask and cloak provided at the Castle must be worn during the show.",
+    "rule4": "No walk-ins online reservations only."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "At what time the gathering is starting?",
+    "a1": "Doors open 30 minutes before the show. Please arrive no later than, 20 minutes before it begins.",
+    "q2": "Can I enter after the show started?",
+    "a2_p1": "No, once the show starts, the doors will be closed and unfortunately no one will be allowed to enter after that point.",
+    "a2_p2": "It is important to arrive before the show begins to ensure you have a seat and don't miss any part of the performance. This show is a journey with story-telling, and to fully experience the narrative, it is crucial to be present from the beginning.",
+    "a2_p3": "Please plan to arrive early to avoid any inconvenience.",
+    "q3": "I don't have reservation is walk in ok?",
+    "a3_p1": "Seriously? Are you checking this question?",
+    "a3_p2": "We wrote it everywhere for you!",
+    "a3_p3": "No, walk-ins are not allowed because is a reservation-only system.",
+    "a3_p4": "Please make sure to secure a reservation in advance to attend the show.",
+    "q4": "Is the show every night the same?",
+    "a4": "No, the gathering is different every night. We are pleased to present top-level artists, Including world champions and most of them are medalists. The show always feels special, as we host both Japanese and international guest artists. Each evenings offers a unique experience!",
+    "q5": "What language is the storytelling?",
+    "a5_p1": "The story will be told in both Japanese and English.",
+    "a5_p2": "However, the show is designed to be enjoyable and talk-free, so regardless of language, the experience will be captivating and accessible to all.",
+    "q6": "Is there any dress code to attend the gathering?",
+    "a6_p1": "No, there isn't a specific dress code for attending the gathering.",
+    "a6_p2": "However, we really encourage people to enjoy the event and come in their best outfits to make it a memorable occasion! As part of this gathering, you'll experience an immersive event where you are the guest of Svengali.",
+    "q7": "Mask have to be worn during the show?",
+    "a7_p1": "Yes, masks are an integral part of the story and the gatherings of Svengali, so they must be worn during the show.",
+    "a7_p2": "Additionally, a robe or cape will be rented to you for the occasion and must be worn.",
+    "a7_p3": "All our masks are handcrafted by talented artisans in Venise and are disinfected after each use to ensure they are bacteria-free.",
+    "q8": "I wear glasses can I have a mask?",
+    "a8": "Yes, we will provide masks specifically designed for glasses users. They are made to be comfortable to wear, ensuring you can enjoy the show without any discomfort.",
+    "q9": "Is there better seat for tall persons?",
+    "a9": "Yes, it is preferable to reserve a seat on the 1st floor. You will find it more comfortable.",
+    "q10": "Do I have to pay extra for the drinks?",
+    "a10": "No, cocktails and champagne are included in the entry price.",
+    "q11": "Is it possible to drink while having a mask on?",
+    "a11": "Yes, our mask are designed for you to enjoy also your drinks during the event.",
+    "q12": "Is kids allowed to the show?",
+    "a12": "The minimum age required for the show is 16 years old, so unfortunately, kids are not allowed to attend.",
+    "q13": "Can I smoke at the venue?",
+    "a13": "No, smoking is not allowed at the venue.",
+    "q14": "I have some allergies what should I do?",
+    "a14": "Please inform our staff when arriving at the venue. We will always double check at the entrance with you anyway.",
+    "q15": "Is any facilities for wheelchair?",
+    "a15": "No, unfortunately, the venue and facilities are not arranged or equipped for wheelchair accessibility.",
+    "q16": "What should I expect to see?",
+    "a16": "You can expect an incredible experience with amazing artists offering something truly different. The show invites you to enter the unknown, embarking on a transformative journey that takes you from darkness to light."
+  },
+  "newsletter": {
+    "title": "Stay under Svengali's spell",
+    "description": "Subscribe for updates, mysteries, and special offers",
+    "email_placeholder": "Your email address",
+    "subscribe": "Subscribe",
+    "success": "Thank you! You're now in the inner circle."
+  },
+  "footer": {
+    "copyright": "2026 Svengali, Kyoto. All rights reserved. A company of ABRA-CADABRA Ltd."
+  },
+  "modal": {
+    "close_aria": "Close"
+  }
+}
