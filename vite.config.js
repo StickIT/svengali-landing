@@ -111,30 +111,37 @@ export default defineConfig({
             // 1) Supprime tous les event handlers et javascript:
             html = html.replace(/on\w+\s*=\s*"[^"]*"/gi, '')
             html = html.replace(/javascript:/gi, '')
-            // 2) Supprimer tags non listés
+            // 2) Nettoyage avec whitelist et conservation des balises fermantes
             const allowedTags = ['b','strong','i','em','u','sup','sub','span','a','br']
             html = html.replace(/<\/?([a-z0-9-]+)([^>]*)>/gi, (m, tag, attrs) => {
-              if (!allowedTags.includes(tag.toLowerCase())) return ''
+              const lower = tag.toLowerCase()
+              const isClosing = m.startsWith('</')
+              if (!allowedTags.includes(lower)) return ''
+              if (isClosing) return `</${lower}>`
               // Filtrer attributs autorisés
               const allowedAttrs = ['class','title','aria-label','href','target','rel']
               let filtered = (attrs || '').replace(/\s+([a-z0-9-:]+)=("[^"]*"|'[^']*')/gi, (mm, attr, val) => {
                 return allowedAttrs.includes(attr.toLowerCase()) ? ` ${attr}=${val}` : ''
               })
               // Forcer sécurité pour <a>
-              if (tag.toLowerCase() === 'a') {
+              if (lower === 'a') {
                 // ensure rel contains noopener noreferrer
                 let relMatch = /\srel=("([^"]*)"|'([^']*)')/i.exec(filtered)
                 const relVal = relMatch ? (relMatch[2] || relMatch[3] || '') : ''
                 const needed = ['noopener','noreferrer']
                 const relSet = new Set(relVal.split(/\s+/).filter(Boolean).concat(needed))
                 const newRel = Array.from(relSet).join(' ')
-                filtered = filtered.replace(/\srel=("[^"]*"|'[^']*')/i, '') + ` rel="${newRel}"`
+                if (relMatch) {
+                  filtered = filtered.replace(/\srel=("[^"]*"|'[^']*')/i, ` rel="${newRel}"`)
+                } else {
+                  filtered += ` rel="${newRel}"`
+                }
                 // default target if present
                 if (/\starget=/.test(filtered) && !/\starget=("_blank"|'_blank')/i.test(filtered)) {
                   filtered = filtered.replace(/\starget=("[^"]*"|'[^']*')/i, ' target="_blank"')
                 }
               }
-              return `<${tag}${filtered}>`
+              return `<${lower}${filtered}>`
             })
             return html
           }
@@ -172,7 +179,7 @@ export default defineConfig({
 
         // Supprimer les attributs data-i18n* du markup final pour obtenir un HTML propre
         const stripI18nAttrs = (markup) => markup
-          .replace(/\sdata-i18n(?:-[a-z-]+)?="[^"]*"/g, '')
+          .replace(/\sdata-i18n(?:-[a-z-]+)?(?:="[^"]*")?/g, '')
 
         // Fonction utilitaire pour créer une variante localisée (head + prérendu simple)
         const makeVariant = (lang, urlBase) => {
