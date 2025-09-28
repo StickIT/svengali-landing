@@ -165,13 +165,61 @@ export default defineConfig({
           })
 
           // data-i18n-html (remplacer le innerHTML par contenu riche localisé, après sanitation)
-          // IMPORTANT: faire correspondre la balise fermante du même élément pour éviter les remplacements tronqués
-          out = out.replace(/(<([a-zA-Z0-9:-]+)[^>]*data-i18n-html="([^"]+)"[^>]*>)([\s\S]*?)(<\/\2>)/g, (m, open, tag, key, inner, close) => {
-            const val = getByPath(dict, key)
-            if (val === undefined) return m
-            const safe = sanitizeHtml(String(val))
-            return `${open}${safe}${close}`
-          })
+          // Implémentation robuste avec gestion de l'imbrication du même tag (ex: <span> dans <span>)
+          const replaceDataI18nHtml = (markup) => {
+            const openRe = /<([a-zA-Z0-9:-]+)([^>]*?)\sdata-i18n-html="([^"]+)"([^>]*)>/g
+            let result = ''
+            let lastIndex = 0
+            let m
+            while ((m = openRe.exec(markup)) !== null) {
+              const tag = m[1]
+              const key = m[3]
+              const openStart = m.index
+              const openEnd = openRe.lastIndex
+
+              // Chercher la fermeture correspondante avec gestion de profondeur
+              const closeTag = `</${tag}>`
+              const openTagRe = new RegExp(`<${tag}(?:\s|>)`, 'gi')
+              const closeTagRe = new RegExp(`</${tag}>`, 'gi')
+              let depth = 1
+              let searchIdx = openEnd
+              while (depth > 0) {
+                const nextOpen = markup.slice(searchIdx).search(openTagRe)
+                const nextClose = markup.slice(searchIdx).search(closeTagRe)
+                if (nextClose === -1) break // mal formé
+                if (nextOpen !== -1 && nextOpen < nextClose) {
+                  // un sous-tag de même type trouvé avant la fermeture
+                  searchIdx += nextOpen + 1 // avancer et continuer
+                  depth += 1
+                  continue
+                }
+                // trouve une fermeture
+                depth -= 1
+                searchIdx += nextClose + closeTag.length
+              }
+              const closeEnd = searchIdx
+              const innerStart = openEnd
+              const innerEnd = closeEnd - closeTag.length
+              if (depth !== 0 || innerEnd < innerStart) {
+                // Sécurité: si mal formé, on saute
+                continue
+              }
+              const val = getByPath(dict, key)
+              const safe = val === undefined ? null : sanitizeHtml(String(val))
+              result += markup.slice(lastIndex, innerStart)
+              if (safe !== null) {
+                result += safe
+              } else {
+                result += markup.slice(innerStart, innerEnd)
+              }
+              result += closeTag
+              lastIndex = closeEnd
+            }
+            result += markup.slice(lastIndex)
+            return result
+          }
+
+          out = replaceDataI18nHtml(out)
 
           // Balises meta principales déjà gérées via head ci-dessous; ici on laisse tel quel
           return out
