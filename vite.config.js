@@ -177,42 +177,35 @@ export default defineConfig({
               const openStart = m.index
               const openEnd = openRe.lastIndex
 
-              // Chercher la fermeture correspondante avec gestion de profondeur
-              const closeTag = `</${tag}>`
-              const openTagRe = new RegExp(`<${tag}(?:\s|>)`, 'gi')
-              const closeTagRe = new RegExp(`</${tag}>`, 'gi')
+              // Chercher la fermeture correspondante avec gestion de profondeur (indexOf)
+              const openToken = `<${tag}`
+              const closeToken = `</${tag}>`
               let depth = 1
               let searchIdx = openEnd
               while (depth > 0) {
-                const nextOpen = markup.slice(searchIdx).search(openTagRe)
-                const nextClose = markup.slice(searchIdx).search(closeTagRe)
+                const nextOpen = markup.indexOf(openToken, searchIdx)
+                const nextClose = markup.indexOf(closeToken, searchIdx)
                 if (nextClose === -1) break // mal formé
                 if (nextOpen !== -1 && nextOpen < nextClose) {
-                  // un sous-tag de même type trouvé avant la fermeture
-                  searchIdx += nextOpen + 1 // avancer et continuer
                   depth += 1
-                  continue
+                  searchIdx = nextOpen + openToken.length
+                } else {
+                  depth -= 1
+                  searchIdx = nextClose + closeToken.length
                 }
-                // trouve une fermeture
-                depth -= 1
-                searchIdx += nextClose + closeTag.length
               }
               const closeEnd = searchIdx
               const innerStart = openEnd
-              const innerEnd = closeEnd - closeTag.length
+              const innerEnd = closeEnd - closeToken.length
               if (depth !== 0 || innerEnd < innerStart) {
-                // Sécurité: si mal formé, on saute
+                // Sécurité: si mal formé, on copie tel quel
                 continue
               }
               const val = getByPath(dict, key)
               const safe = val === undefined ? null : sanitizeHtml(String(val))
               result += markup.slice(lastIndex, innerStart)
-              if (safe !== null) {
-                result += safe
-              } else {
-                result += markup.slice(innerStart, innerEnd)
-              }
-              result += closeTag
+              result += safe !== null ? safe : markup.slice(innerStart, innerEnd)
+              result += closeToken
               lastIndex = closeEnd
             }
             result += markup.slice(lastIndex)
