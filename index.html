@@ -192,8 +192,8 @@
       <div id="herocontent" class="content">
         <nav class="header-nav container reveal">
           <div class="left">
-            <a class="link" href="#story" data-i18n="nav.story">The Story</a>
-            <a class="link" href="#location" data-i18n="nav.location">The Location</a>
+            <a class="link" href="#story" data-i18n="nav.story"></a>
+            <a class="link" href="#location" data-i18n="nav.location"></a>
           </div>
           <div class="logo">
             <img src="/images/Logo_Svengali.png" data-i18n-alt="meta.title" alt="">
@@ -258,7 +258,7 @@
       <section class="intro main-section" id="intro">
         <div class="container reveal">
           <h2 data-i18n="intro.title"></h2>
-          <p><span class="num" data-i18n="intro.years">100</span> <span data-i18n="intro.description"></span></p>
+          <p data-i18n="intro.description"></p>
           <a class="btn btn--primary btn--red" href="#location" target="_blank" rel="noopener noreferrer">
             <span class="label" data-i18n="cta.see_location"></span>
             <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
@@ -277,14 +277,7 @@
           </div>
           <div class="right reveal">
             <h2 data-i18n="story.title"></h2>
-            <div class="text-content">
-              <p data-i18n="story.paragraph1"></p>
-              <p data-i18n="story.paragraph2"></p>
-              <p data-i18n="story.paragraph3">Each evening, Svengali hosts various talented artists, making each night in central Kyoto unique and
-                cinematic.</p>
-              <p data-i18n="story.paragraph4">Step into the world of Svengali, a transformative journey blending circus, the world of magic and
-                storytelling.</p>
-            </div>
+            <div class="text-content" data-i18n-html="story.content_html"></div>
             <a class="btn btn--primary"
               href="https://www.tablecheck.com/en/svengali/reserve/message?utm_source=svengali&utm_medium=website&utm_campaign=section_presentation&utm_content=buy_tickets"
               target="_blank" rel="noopener">
@@ -421,7 +414,7 @@
             </div>
             <div class="right">
               <img src="/images/svengali-map.webp"
-                alt="Map showing Svengali location in Kyoto's Nakagyo Ward near Gion district" data-i18n-alt="location.map_alt">
+               data-i18n-alt="location.map_alt" alt="">
             </div>
           </article>
         </div>
@@ -436,12 +429,7 @@
               <div class="decoration bottom">
                 <img src="/images/decoration-square-gold.svg" alt="" aria-hidden="true">
               </div>
-              <ul>
-                <li data-i18n-html="rules.rule1_html"></li>
-                <li data-i18n-html="rules.rule2_html"></li>
-                <li data-i18n-html="rules.rule3_html"></li>
-                <li data-i18n-html="rules.rule4_html"></li>
-              </ul>
+              <div data-i18n-html="rules.rules_html"></div>
             </div>
           </article>
           <div id="faq" itemscope itemtype="https://schema.org/FAQPage">

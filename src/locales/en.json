@@ -8,7 +8,6 @@
     "twitter_title": "Svengali - House of Curiosities in Kyoto",
     "twitter_description": "Experience Kyoto's most immersive cabaret theater"
   },
-  
   "nav": {
     "mobile_menu_aria": "Mobile menu",
     "close_button_aria": "Close",
@@ -32,7 +31,13 @@
   "footer": {
     "copyright_html": "© <span class=\"num\">2026</span> Svengali, Kyoto. All rights reserved. A company of ABRA-CADABRA Ltd."
   },
-  
+  "newsletter": {
+    "title": "Subscribe to our newsletter",
+    "description": "Get the latest news and updates about Svengali",
+    "email_placeholder": "Enter your email address",
+    "subscribe": "Subscribe",
+    "success": "Thank you for subscribing to our newsletter!"
+  },
   "site": {
     "name": "Svengali"
   },
@@ -53,22 +58,13 @@
   },
   "booking": {
     "title": "Join the Svengali Gatherings",
-    "pm": "PM",
-    "or": "or",
     "online_only": "Online Reservation Only",
     "subtitle_html": "<span class=\"num\">6:00</span> PM or <span class=\"num\">9:00</span> PM <span class=\"sep\">|</span> <span class=\"jump\">Online Reservation Only</span>"
   },
-  "intro": {
-    "title": "Svengali invites you in his castle in the hearth of Kyoto",
-    "description": "years after Svengali's legendary parties, we keep the spirit alive by reviving the gathering"
-  },
   "story": {
     "title": "The House of Curiosities, an unique immersive experience",
-    "poster_alt": "Svengali theater poster showing mysterious masked performers in ornate frame",
-    "paragraph1": "The company Abra-Cadabra, creator of the well acclaimed experimental cocktail lounge in Kyoto, l'Escamoteur Bar, invites you to experience their second chapter.",
-    "paragraph2": "The House of Curiosities offers a unique theater experience, a strange, intimate, and freaky cabaret where boundaries between the stage and audience vanish.",
-    "paragraph3": "Each evening, Svengali hosts various talented artists, making each night in central Kyoto unique and cinematic.",
-    "paragraph4": "Step into the world of Svengali, a transformative journey blending circus, the world of magic and storytelling."
+    "content_html": "<p>The company Abra-Cadabra, creator of the well acclaimed experimental cocktail lounge in Kyoto, l'<a class=\"link\" href=\"https://www.instagram.com/escamoteurbar/\" target=\"_blank\" rel=\"noopener noreferrer\">Escamoteur</a> Bar, invites you to experience their second chapter.</p><p>The House of Curiosities offers a unique theater experience, a strange, intimate, and freaky cabaret where boundaries between the stage and audience vanish.</p><p>Each evening, Svengali hosts various talented artists, making each night in central Kyoto unique and cinematic.</p><p>Step into the world of Svengali, a transformative journey blending circus, the world of magic and storytelling.</p>",
+    "poster_alt": "Svengali theater poster showing mysterious masked performers in ornate frame"
   },
   "tickets": {
     "title": "Choose your Experience",
@@ -79,6 +75,8 @@
     "silver": {
       "title": "Silver Ticket",
       "title_html": "Silver <span>Ticket</span>",
+      "price_now": "10,000",
+      "price_original": "15,000",
       "access": "Access to the show of 90 minutes",
       "access_html": "Access to the show of <span class=\"num duration\">90</span> minutes",
       "seating": "Experience the show from the balcony or on the side of the 1st floor",
@@ -87,8 +85,10 @@
       "costume": "Cloak and mask provided"
     },
     "gold": {
-      "title": "Gold Ticket", 
+      "title": "Gold Ticket",
       "title_html": "Gold <span>Ticket</span>",
+      "price_now": "15,000",
+      "price_original": "20,000",
       "access": "Access to the show of 90 minutes",
       "access_html": "Access to the show of <span class=\"num duration\">90</span> minutes",
       "seating": "Experience the show directly in front of the stage with premium seats",
@@ -117,6 +117,7 @@
   "rules": {
     "title": "Svengali's Rules",
     "important_title": "IMPORTANT MESSAGE",
+    "rules_html": "<ul><li>Admission is for <b>16 and above.</b></li><li><b>Svengali is not responsible</b> for any accidents, injuries, or damages at our venue.</li><li><b>The mask and cloak provided</b> at the Castle must be worn during the show.</li><li><b>No walk-ins</b> — online reservations only.</li></ul>",
     "rule1": "Admission is for 16 and above.",
     "rule1_html": "Admission is for <b>16 and above.</b>",
     "rule2": "Svengali is not responsible for any accidents, injuries, or damages at our venue.",
@@ -170,5 +171,19 @@
   },
   "modal": {
     "close_aria": "Close"
+  },
+  "language": {
+    "en": "English",
+    "ja": "日本語"
+  },
+  "social": {
+    "instagram": "Instagram"
+  },
+  "common": {
+    "currency_symbol": "¥"
+  },
+  "intro": {
+    "title": "Svengali invites you to his castle in the heart of Kyoto",
+    "description": "100 years after Svengali's legendary parties, we keep the spirit alive by reviving the gathering"
   }
 }
