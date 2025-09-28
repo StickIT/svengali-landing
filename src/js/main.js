@@ -16,7 +16,6 @@ import '../styles/main.scss';
 
 // Features
 import { initNavigation } from './modules/navigation.js';
-// import { initSliders } from './modules/slider.js';
 import { initVideoModal } from './modules/video-modal.js';
 import { initReveal } from './modules/reveal.js';
 import { initSmoothScroll } from './modules/smooth-scroll.js';
@@ -34,7 +33,6 @@ window.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initSideNav();
   initReveal();
-  // initSliders();
   initVideoModal();
   initSmoothScroll();
   initFaq();
