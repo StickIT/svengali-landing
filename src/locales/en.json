@@ -8,11 +8,12 @@
     "twitter_title": "Svengali - House of Curiosities in Kyoto",
     "twitter_description": "Experience Kyoto's most immersive cabaret theater"
   },
+  
   "nav": {
     "mobile_menu_aria": "Mobile menu",
     "close_button_aria": "Close",
     "story": "The Story",
-    "location": "The Location", 
+    "location": "The Location",
     "rules": "Rules & FAQ",
     "buy_tickets_alt": "Buy Tickets",
     "menu_alt": "Open Menu"
@@ -21,7 +22,19 @@
     "special_offer": "SPECIAL OFFER!",
     "discount_text": "discount on every tickets, until",
     "january": "January",
-    "cta": "GET YOUR TICKETS!"
+    "cta": "GET YOUR TICKETS!",
+    "ordinal_th": "th",
+    "banner_html": "<b>SPECIAL OFFER!</b> – <span class=\"num\">¥5,000</span> discount on every tickets, until <span class=\"num\">13</span><sup>th</sup> January <span class=\"num\">2026</span> – <a class=\"link\" href=\"https://www.tablecheck.com/en/svengali/reserve/message?utm_source=svengali&utm_medium=website&utm_campaign=promo_header&utm_content=buy_tickets\" target=\"_blank\" rel=\"noopener\">GET YOUR TICKETS!</a>"
+  },
+  "brand": {
+    "header_html": "<span class=\"left\">SVENGALI</span><span class=\"sep\"> | </span><span class=\"right\">ABRA-CADABRA Ltd.</span>"
+  },
+  "footer": {
+    "copyright_html": "© <span class=\"num\">2026</span> Svengali, Kyoto. All rights reserved. A company of ABRA-CADABRA Ltd."
+  },
+  
+  "site": {
+    "name": "Svengali"
   },
   "cta": {
     "buy_tickets": "Buy Tickets",
@@ -42,7 +55,8 @@
     "title": "Join the Svengali Gatherings",
     "pm": "PM",
     "or": "or",
-    "online_only": "Online Reservation Only"
+    "online_only": "Online Reservation Only",
+    "subtitle_html": "<span class=\"num\">6:00</span> PM or <span class=\"num\">9:00</span> PM <span class=\"sep\">|</span> <span class=\"jump\">Online Reservation Only</span>"
   },
   "intro": {
     "title": "Svengali invites you in his castle in the hearth of Kyoto",
@@ -59,17 +73,26 @@
   "tickets": {
     "title": "Choose your Experience",
     "discount_text": "discount until",
+    "common": {
+      "price_note_html": "¥<span class=\"num\">5,000</span> discount until <span class=\"num\">13</span><sup>th</sup> January"
+    },
     "silver": {
       "title": "Silver Ticket",
+      "title_html": "Silver <span>Ticket</span>",
       "access": "Access to the show of 90 minutes",
+      "access_html": "Access to the show of <span class=\"num duration\">90</span> minutes",
       "seating": "Experience the show from the balcony or on the side of the 1st floor",
+      "seating_html": "Experience the show <b>from the balcony or on the side of the <span class=\"num bold\">1</span><sup>st</sup> floor</b>",
       "drinks": "Drinks included",
       "costume": "Cloak and mask provided"
     },
     "gold": {
       "title": "Gold Ticket", 
+      "title_html": "Gold <span>Ticket</span>",
       "access": "Access to the show of 90 minutes",
+      "access_html": "Access to the show of <span class=\"num duration\">90</span> minutes",
       "seating": "Experience the show directly in front of the stage with premium seats",
+      "seating_html": "Experience the show <b>directly in front of the stage with premium seats</b>",
       "drinks": "Drinks included",
       "costume": "Cloak and mask provided"
     }
@@ -81,6 +104,7 @@
   "location": {
     "title": "How to get to Svengali Castle?",
     "address": "7th Floor, Nakagyo Ward, Bizenjimach, 604-8023 Kyoto, Japan",
+    "address_html": "ＰＬＥＸＵＳ, <span class=\"num\">7</span><sup>th</sup> Floor, Nakagyo Ward, Bizenjimachō, 〒<span class=\"num\">604-8023</span> Kyoto, Japan",
     "access_title": "Access",
     "metro_title": "Metro",
     "metro_1": "Gion-Shijo / Sanjo Station Keihan Line",
@@ -94,15 +118,20 @@
     "title": "Svengali's Rules",
     "important_title": "IMPORTANT MESSAGE",
     "rule1": "Admission is for 16 and above.",
+    "rule1_html": "Admission is for <b>16 and above.</b>",
     "rule2": "Svengali is not responsible for any accidents, injuries, or damages at our venue.",
+    "rule2_html": "<b>Svengali is not responsible</b> for any accidents, injuries, or damages at our venue.",
     "rule3": "The mask and cloak provided at the Castle must be worn during the show.",
-    "rule4": "No walk-ins online reservations only."
+    "rule3_html": "<b>The mask and cloak provided</b> at the Castle must be worn during the show.",
+    "rule4": "No walk-ins online reservations only.",
+    "rule4_html": "<b>No walk-ins</b> — online reservations only."
   },
   "faq": {
     "title": "Frequently Asked Questions",
     "q1": "At what time the gathering is starting?",
     "a1": "Doors open 30 minutes before the show. Please arrive no later than, 20 minutes before it begins.",
     "q2": "Can I enter after the show started?",
+    "a2_html": "No, <b>once the show starts, the doors will be closed</b> and unfortunately no one will be allowed to enter after that point.",
     "a2_p1": "No, once the show starts, the doors will be closed and unfortunately no one will be allowed to enter after that point.",
     "a2_p2": "It is important to arrive before the show begins to ensure you have a seat and don't miss any part of the performance. This show is a journey with story-telling, and to fully experience the narrative, it is crucial to be present from the beginning.",
     "a2_p3": "Please plan to arrive early to avoid any inconvenience.",
@@ -148,9 +177,6 @@
     "email_placeholder": "Your email address",
     "subscribe": "Subscribe",
     "success": "Thank you! You're now in the inner circle."
-  },
-  "footer": {
-    "copyright": "2026 Svengali, Kyoto. All rights reserved. A company of ABRA-CADABRA Ltd."
   },
   "modal": {
     "close_aria": "Close"

@@ -1,18 +1,22 @@
-// import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';
-// setBasePath('/assets'); // points to dist/assets at build time
-
-// Register only the components we need
-// import '@shoelace-style/shoelace/dist/components/drawer/drawer.js';
-// import '@shoelace-style/shoelace/dist/components/button/button.js';
-// import '@shoelace-style/shoelace/dist/components/details/details.js';
-// import '@shoelace-style/shoelace/dist/components/icon/icon.js';
-// import '@shoelace-style/shoelace/dist/components/icon-button/icon-button.js';
-
 // Styles (SCSS)
 import '../styles/main.scss';
 
-// // Set the base path to the folder you copied Shoelace's assets to
-// setBasePath('/path/to/shoelace/dist');
+// Redirect root path to language slug for SEO-friendly URLs (PROD only)
+(() => {
+  if (import.meta && import.meta.env && import.meta.env.PROD) {
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    if (parts.length === 0) {
+      const saved = localStorage.getItem('i18nextLng');
+      const browser = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      const lang = saved || (browser.startsWith('ja') ? 'ja' : 'en');
+      window.location.replace(`/${lang}/`);
+    }
+  }
+})();
+
+// i18n
+import './modules/i18n.js';
+import { initLanguageSwitcher } from './modules/language-switcher.js';
 
 // Features
 import { initNavigation } from './modules/navigation.js';
@@ -22,11 +26,16 @@ import { initSmoothScroll } from './modules/smooth-scroll.js';
 import { initHeroLoader } from './modules/video-loader.js';
 import { initStageCurtain } from './modules/stage-curtain.js';
 import { initSideNav } from './modules/sidenav.js';
-import { initAdjustPadding} from './modules/adjust-height.js';
+import { initAdjustPadding } from './modules/adjust-height.js';
 import { initFaq } from './modules/faq.js';
 import { initNewsletter } from './modules/newsletter.js';
 
-window.addEventListener('DOMContentLoaded', () => {
+// Attendre que le DOM soit chargé et que i18n soit prêt
+const initApp = async () => {
+  // Initialiser le sélecteur de langue en premier
+  initLanguageSwitcher();
+  
+  // Initialiser les autres fonctionnalités
   initAdjustPadding();
   initHeroLoader();
   initStageCurtain();
@@ -36,4 +45,12 @@ window.addEventListener('DOMContentLoaded', () => {
   initVideoModal();
   initSmoothScroll();
   initFaq();
-});
+  initNewsletter();
+};
+
+// Démarrer l'application
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}

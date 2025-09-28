@@ -8,6 +8,9 @@
     "twitter_title": "スヴェンガリ - 京都の好奇心の館",
     "twitter_description": "京都で最も没入感のあるキャバレーシアターを体験"
   },
+  "footer": {
+    "copyright_html": "© <span class=\"num\">2026</span> Svengali, Kyoto. 全著作権所有。ABRA-CADABRA Ltd.の会社。"
+  },
   "nav": {
     "mobile_menu_aria": "モバイルメニュー",
     "close_button_aria": "閉じる",
@@ -21,7 +24,15 @@
     "special_offer": "特別オファー！",
     "discount_text": "全チケット割引、",
     "january": "1月",
-    "cta": "チケットを購入！"
+    "cta": "チケットを購入！",
+    "ordinal_th": "",
+    "banner_html": "<b>特別オファー！</b> – <span class=\"num\">¥5,000</span> <span>まで割引</span> <span class=\"num\">13</span><sup></sup> <span>1月</span> <span class=\"num\">2026</span> – <a class=\"link\" href=\"https://www.tablecheck.com/ja/svengali/reserve/message?utm_source=svengali&utm_medium=website&utm_campaign=promo_header&utm_content=buy_tickets\" target=\"_blank\" rel=\"noopener\">チケットを購入！</a>"
+  },
+  "brand": {
+    "header_html": "<span class=\"left\">SVENGALI</span><span class=\"sep\"> | </span><span class=\"right\">ABRA-CADABRA Ltd.</span>"
+  },
+  "site": {
+    "name": "Svengali"
   },
   "cta": {
     "buy_tickets": "チケット購入",
@@ -42,7 +53,8 @@
     "title": "スヴェンガリの集まりに参加する",
     "pm": "午後",
     "or": "または",
-    "online_only": "オンライン予約のみ"
+    "online_only": "オンライン予約のみ",
+    "subtitle_html": "<span class=\"num\">6:00</span> 午後 または <span class=\"num\">9:00</span> 午後 <span class=\"sep\">|</span> <span class=\"jump\">オンライン予約のみ</span>"
   },
   "intro": {
     "title": "スヴェンガリが京都の中心地にある城へご招待",
@@ -59,17 +71,26 @@
   "tickets": {
     "title": "体験を選択",
     "discount_text": "まで割引",
+    "common": {
+      "price_note_html": "¥<span class=\"num\">5,000</span> まで割引 <span class=\"num\">13</span><sup></sup> <span>1月</span>"
+    },
     "silver": {
       "title": "シルバーチケット",
+      "title_html": "シルバー <span>チケット</span>",
       "access": "90分のショーへのアクセス",
+      "access_html": "<span class=\"num duration\">90</span> 分のショーへのアクセス",
       "seating": "バルコニーまたは1階の側面からショーを体験",
+      "seating_html": "<b>バルコニー、または <span class=\"num bold\">1</span><sup></sup> 階の側面からショーを体験</b>",
       "drinks": "ドリンク込み",
       "costume": "クロークとマスクを提供"
     },
     "gold": {
       "title": "ゴールドチケット",
+      "title_html": "ゴールド <span>チケット</span>",
       "access": "90分のショーへのアクセス", 
+      "access_html": "<span class=\"num duration\">90</span> 分のショーへのアクセス",
       "seating": "プレミアムシートでステージ前で直接ショーを体験",
+      "seating_html": "<b>ステージ正面のプレミアムシートでショーを体験</b>",
       "drinks": "ドリンク込み",
       "costume": "クロークとマスクを提供"
     }
@@ -81,6 +102,7 @@
   "location": {
     "title": "スヴェンガリ城への行き方は？",
     "address": "7階、中京区、備前島町、604-8023 京都、日本",
+    "address_html": "ＰＬＥＸＵＳ、<span class=\"num\">7</span><sup></sup> 階、中京区、備前島町、〒<span class=\"num\">604-8023</span> 京都、日本",
     "access_title": "アクセス",
     "metro_title": "地下鉄",
     "metro_1": "祇園四条・三条駅 京阪本線",
@@ -94,16 +116,21 @@
     "title": "スヴェンガリのルール",
     "important_title": "重要なメッセージ",
     "rule1": "16歳以上の方のみ入場可能。",
+    "rule1_html": "<b>16歳以上</b> の方のみ入場可能。",
     "rule2": "スヴェンガリは会場での事故、怪我、損害について責任を負いません。",
+    "rule2_html": "会場での事故・怪我・損害について、<b>スヴェンガリは一切の責任を負いません</b>。",
     "rule3": "城で提供されるマスクとクロークはショー中着用必須。",
-    "rule4": "飛び込み入場不可 オンライン予約のみ。"
+    "rule3_html": "城で提供される <b>マスクとクロークはショー中着用必須</b>。",
+    "rule4": "飛び込み入場不可 オンライン予約のみ。",
+    "rule4_html": "<b>飛び込み入場不可</b> — オンライン予約のみ。"
   },
   "faq": {
     "title": "よくある質問",
     "q1": "集まりは何時に始まりますか？",
     "a1": "ショーの30分前に開場します。開始の20分前までにお越しください。",
     "q2": "ショー開始後に入場できますか？",
-    "a2_p1": "いいえ、ショーが始まると扉が閉められ、残念ながらその後は誰も入場できません。",
+    "a2_p1": "いいえ、ショーが始まると扉が閉まり、その後はどなたも入場できません。",
+    "a2_html": "<b>ショーが始まる</b> と同時に、扉が閉められ、残念ながらその後は誰も入場できません。",
     "a2_p2": "席を確保し、パフォーマンスの一部を見逃さないために、ショーが始まる前に到着することが重要です。このショーはストーリーテリングを伴う旅であり、物語を完全に体験するために、最初から参加することが不可欠です。",
     "a2_p3": "ご不便をおかけしないよう、早めにお越しください。",
     "q3": "予約がありません。飛び込みは大丈夫？",
@@ -148,9 +175,6 @@
     "email_placeholder": "メールアドレス",
     "subscribe": "購読",
     "success": "ありがとうございます！インナーサークルの一員になりました。"
-  },
-  "footer": {
-    "copyright": "2026 スヴェンガリ、京都。全著作権所有。ABRA-CADABRA Ltd.の会社。"
   },
   "modal": {
     "close_aria": "閉じる"
