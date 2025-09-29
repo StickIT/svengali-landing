@@ -112,7 +112,8 @@ export default defineConfig({
             html = html.replace(/on\w+\s*=\s*"[^"]*"/gi, '')
             html = html.replace(/javascript:/gi, '')
             // 2) Nettoyage avec whitelist et conservation des balises fermantes
-            const allowedTags = ['b','strong','i','em','u','sup','sub','span','a','br']
+            // IMPORTANT: inclure les balises de bloc utilisées par les contenus enrichis (ex: <p>, <ul>, <li>)
+            const allowedTags = ['b','strong','i','em','u','sup','sub','span','a','br','p','ul','ol','li']
             html = html.replace(/<\/?([a-z0-9-]+)([^>]*)>/gi, (m, tag, attrs) => {
               const lower = tag.toLowerCase()
               const isClosing = m.startsWith('</')
