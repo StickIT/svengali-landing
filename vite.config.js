@@ -232,6 +232,13 @@ export default defineConfig({
           out = out.replace(/<link\s+rel="canonical"[^>]*href="[^"]*"[^>]*>/i, `<link rel="canonical" href="${urlBase}/${lang}/">`)
           // og:url
           out = out.replace(/<meta\s+property="og:url"[^>]*content="[^"]*"[^>]*>/i, `<meta property="og:url" content="${urlBase}/${lang}/">`)
+          // hreflang alternates (inject before </head>)
+          const alternates = [
+            `<link rel="alternate" hreflang="en" href="${urlBase}/en/">`,
+            `<link rel="alternate" hreflang="ja" href="${urlBase}/ja/">`,
+            `<link rel="alternate" hreflang="x-default" href="${urlBase}/en/">`
+          ].join('\n    ')
+          out = out.replace(/<\/head>/i, `  ${alternates}\n</head>`)
           // Prérendre le contenu marqué
           out = prerenderContent(out, lang)
           // Nettoyer les attributs data-i18n*
@@ -255,6 +262,42 @@ export default defineConfig({
         writeFileSync(path.join(jaDir, 'index.html'), jaHtml, 'utf8')
 
         console.log('✅ Pages localisées générées: dist/en/index.html, dist/ja/index.html')
+
+        // Générer une page racine "détecteur" qui redirige selon la langue du navigateur
+        // Default: EN, si navigateur = JA -> redirige /ja/
+        const detectorHtml = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Svengali</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="alternate" hreflang="en" href="${urlBase}/en/">
+    <link rel="alternate" hreflang="ja" href="${urlBase}/ja/">
+    <link rel="alternate" hreflang="x-default" href="${urlBase}/en/">
+    <meta http-equiv="refresh" content="0;url=/en/">
+    <script>
+      (function(){
+        try {
+          var langs = navigator.languages || [navigator.language || navigator.userLanguage || 'en'];
+          var isJa = langs.some(function(l){ return (l||'').toLowerCase().startsWith('ja'); });
+          var target = isJa ? '/ja/' : '/en/';
+          if (location.pathname !== target) location.replace(target);
+        } catch(e) {
+          // fallback meta refresh
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <meta http-equiv="refresh" content="0;url=/en/">
+      <p>Redirecting... <a href="/en/">Go to English</a> | <a href="/ja/">日本語はこちら</a></p>
+    </noscript>
+  </body>
+</html>`
+        writeFileSync(path.join(outDir, 'index.html'), detectorHtml, 'utf8')
+        console.log('✅ Page détecteur racine générée: dist/index.html (redirige EN/JA selon navigateur)')
       }
     }
   ]
