@@ -31,13 +31,6 @@
   "footer": {
     "copyright_html": "© <span class=\"num\">2026</span> Svengali, Kyoto. All rights reserved. A company of ABRA-CADABRA Ltd."
   },
-  "newsletter": {
-    "title": "Subscribe to our newsletter",
-    "description": "Get the latest news and updates about Svengali",
-    "email_placeholder": "Enter your email address",
-    "subscribe": "Subscribe",
-    "success": "Thank you for subscribing to our newsletter!"
-  },
   "site": {
     "name": "Svengali"
   },
@@ -60,6 +53,10 @@
     "title": "Join the Svengali Gatherings",
     "online_only": "Online Reservation Only",
     "subtitle_html": "<span class=\"num\">6:00</span> PM or <span class=\"num\">9:00</span> PM <span class=\"sep\">|</span> <span class=\"jump\">Online Reservation Only</span>"
+  },
+  "intro": {
+    "title": "Svengali invites you to his castle in the heart of Kyoto",
+    "description": "100 years after Svengali's legendary parties, we keep the spirit alive by reviving the gathering"
   },
   "story": {
     "title": "The House of Curiosities, an unique immersive experience",
@@ -158,9 +155,9 @@
     "q14": "I have some allergies what should I do?",
     "a14_html": "<p>Please <b>inform our staff about any allergies</b> when you arrive.</p><p>We'll review everything with you at the entrance to ensure your safety and comfort.</p>",
     "q15": "Is any facilities for wheelchair?",
-    "a15_html": "<p>We regret to inform you that our <b>venue is not wheelchair accessible</b> at this time.</p>",
+    "a15_html": "<p>No, unfortunately, the venue and facilities are <b>not arranged or equipped for wheelchair accessibility</b>.</p>",
     "q16": "What should I expect to see?",
-    "a16_html": "<p>Prepare for an <b>unforgettable experience</b> featuring world-class artists in a show unlike any other.</p><p>You'll embark on a transformative journey from darkness to light, filled with mystery, artistry, and wonder that will stay with you long after the final curtain.</p>"
+    "a16_html": "<p>Prepare for an <b>unforgettable experience</b> featuring amazing artists in a show unlike any other.</p><p>You'll embark on a transformative journey from darkness to light, filled with mystery, artistry, and wonder that will stay with you long after the final curtain.</p>"
   },
   "newsletter": {
     "title": "Stay under Svengali's spell",
@@ -181,9 +178,5 @@
   },
   "common": {
     "currency_symbol": "¥"
-  },
-  "intro": {
-    "title": "Svengali invites you to his castle in the heart of Kyoto",
-    "description": "100 years after Svengali's legendary parties, we keep the spirit alive by reviving the gathering"
   }
 }

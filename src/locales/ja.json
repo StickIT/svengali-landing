@@ -31,13 +31,6 @@
   "footer": {
     "copyright_html": "© <span class=\"num\">2026</span> Svengali, 京都. All rights reserved. A company of ABRA-CADABRA Ltd."
   },
-  "newsletter": {
-    "title": "ニュースレターに登録",
-    "description": "Svengaliの最新ニュースとアップデートを受け取る",
-    "email_placeholder": "メールアドレスを入力",
-    "subscribe": "登録",
-    "success": "ニュースレターへのご登録ありがとうございます！"
-  },
   "site": {
     "name": "Svengali"
   },
@@ -60,6 +53,10 @@
     "title": "Svengaliの集いに参加",
     "online_only": "オンライン予約のみ",
     "subtitle_html": "<span class=\"num\">午後6:00</span>または<span class=\"num\">午後9:00</span> <span class=\"sep\">|</span> <span class=\"jump\">オンライン予約のみ</span>"
+  },
+  "intro": {
+    "title": "Svengaliが京都の中心にある城へご招待",
+    "description": "Svengaliの伝説的なパーティーから100年後、私たちは集いを復活させることで、その精神を生き続けさせています"
   },
   "story": {
     "title": "不思議の館、ユニークな没入体験",
@@ -178,9 +175,5 @@
   },
   "common": {
     "currency_symbol": "¥"
-  },
-  "intro": {
-    "title": "Svengaliが京都の中心にある城へご招待",
-    "description": "Svengaliの伝説的なパーティーから100年後、私たちは集いを復活させることで、その精神を生き続けさせています"
   }
 }
