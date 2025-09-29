@@ -352,12 +352,23 @@ section.tickets {
 
                         .price-now {
                             line-height: 1.1em;
-                            font-size: var(--fluid-5);
                             font-weight: bold;
 
-                            .currency {
-                                font-size: var(--fluid-3);
+                            span:not(.currency){
+                                line-height: 1.25em;
+                                font-size: var(--fluid-5);
+                                font-family: 'Sedan', serif;
+                                font-weight: bold;
+                                font-variant-numeric: lining-nums proportional-nums;
+                            }
 
+                            .currency {
+                                font-size: var(--fluid-2);
+                                line-height: 0;
+                                position: relative;
+                                vertical-align: baseline;
+                                top: -.5em;
+                                padding-right: .1em;
                             }
                         }
 
@@ -366,7 +377,13 @@ section.tickets {
                             font-weight: normal;
 
                             .currency {
-                                font-size: var(--fluid-0);
+                                line-height: 1.25em;
+                                font-size: var(--fluid--1);
+                                line-height: 0;
+                                position: relative;
+                                vertical-align: baseline;
+                                top: -.5em;
+                                padding-right: .05em;
                             }
 
                             .line-through {
