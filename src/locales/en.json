@@ -152,7 +152,7 @@
     "q11": "Is it possible to drink while having a mask on?",
     "a11_html": "<p>Yes, our masks are <b>specially designed to allow drinking</b> while wearing them, so you can enjoy your beverages throughout the event.</p>",
     "q12": "Is kids allowed to the show?",
-    "a12_html": "<p>The minimum age required for the show is <b>16 years old</b>, so unfortunately, kids are not allowed to attend.</p>",
+    "a12_html": "<p>The minimum age required for the show is <b><span class=\"num\">16</span> years old</b>, so unfortunately, kids are not allowed to attend.</p>",
     "q13": "Can I smoke at the venue?",
     "a13_html": "<p><b>No smoking</b> is allowed anywhere in the venue.</p>",
     "q14": "I have some allergies what should I do?",
