@@ -66,6 +66,9 @@
   "tickets": {
     "title": "体験を選択",
     "discount_text": "割引期限",
+    "common": {
+      "price_note_html": "¥<span class=\"num\">5,000</span>割引、<span class=\"num\">1</span>月<span class=\"num\">13</span>日まで"
+    },
     "silver": {
       "title": "シルバーチケット",
       "title_html": "シルバー <span>チケット</span>",
