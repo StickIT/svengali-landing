@@ -8,6 +8,14 @@
   align-items: center;
   width: 100%;
   justify-content: space-between;
+
+  @include responsive ('xl') {
+    flex-direction: row-reverse;
+  }
+
+  @include responsive ('md') {
+    flex-direction: row;
+  }
 }
 
 /* Promotion Top-Bar */
@@ -74,7 +82,7 @@
             white-space: nowrap;
             font-size: var(--fluid--1);
             
-            @include responsive('xl') {
+            @include responsive('md') {
                 position: static;
                 left: auto;
                 transform: none;
@@ -134,6 +142,12 @@
                     img {
                         height: 1rem;
                     }
+                }
+            }
+
+            .language-switcher {
+                @include responsive ('sm') {
+                    display: none;
                 }
             }
         }
