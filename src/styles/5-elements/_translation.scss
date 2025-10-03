@@ -10,7 +10,7 @@
     z-index: 2;
     border-radius: 10rem;
     transition: all .3s ease;
-    font-size: calc( var(--fluid-0) - 0.15em);
+    font-size: calc(var(--fluid--1));
     // border: 2px solid rgba(255, 255, 255, 0.3);
     // border-style: inset;
 
@@ -39,7 +39,7 @@
         padding: 0.25rem 0.75rem;
         border-radius: 10rem;
         cursor: pointer;
-        font-size: calc( var(--fluid--1) - 0.15em);
+        font-size: calc(var(--fluid--1));
 
         &:hover {
             background: rgba(255, 255, 255, 0.1);

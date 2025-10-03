@@ -434,11 +434,11 @@
 
                     span {
                         // font-size: 1.25rem;
-                        font-size: calc(var(--fluid-2) - 0.05em);
+                        font-size: calc(var(--fluid-1));
                     }
 
                     img {
-                        height: 1.5rem;
+                        height: 1.25rem;
                         width: auto;
                     }
                 }
@@ -453,7 +453,7 @@
 
             .language-switcher{
                 margin: 0;
-                font-size: calc( var(--fluid-1) - 0.05em);
+                font-size: calc(var(--fluid-0));
             }
     
             .brand {
