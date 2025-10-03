@@ -27,8 +27,7 @@ class LanguageSwitcher {
     // Si un select existe déjà dans le DOM (index.html), le réutiliser
     const existing = document.querySelector('.language-switcher select.language-select');
     if (existing) {
-      // S'assurer qu'il a les bonnes classes/attribs
-      existing.classList.add('btn', 'btn--primary', 'btn--red');
+      // Ensure it has the right attribs (no forced button classes)
       existing.setAttribute('aria-label', 'Language');
       // Mettre la valeur courante
       existing.value = this.currentLanguage;
@@ -49,7 +48,7 @@ class LanguageSwitcher {
     wrapper.className = 'language-switcher';
 
     const select = document.createElement('select');
-    select.className = 'language-select btn btn--primary btn--red';
+    select.className = 'language-select';
     select.setAttribute('aria-label', 'Language');
 
     Object.entries(this.languageMap).forEach(([code, label]) => {
