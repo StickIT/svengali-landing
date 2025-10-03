@@ -1,6 +1,10 @@
 @use "../2-design-tokens/media-queries" as *;
 @use "../2-design-tokens/colors" as *;
 
+/* Bloque le scroll quand le menu est ouvert */
+body.no-scroll {
+    overflow: hidden;
+}
 
 /* Navigation Container */
 .nav-content {
