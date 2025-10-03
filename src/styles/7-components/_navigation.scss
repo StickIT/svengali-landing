@@ -13,7 +13,7 @@
     flex-direction: row-reverse;
   }
 
-  @include responsive ('md') {
+  @include responsive ('lg') {
     flex-direction: row;
   }
 }
@@ -82,7 +82,7 @@
             white-space: nowrap;
             font-size: var(--fluid--1);
             
-            @include responsive('md') {
+            @include responsive('lg') {
                 position: static;
                 left: auto;
                 transform: none;
@@ -441,6 +441,7 @@
 
         .language-switcher{
             margin: 0;
+            font-size: calc( var(--fluid-1) - 0.05em);
         }
 
         .brand {
