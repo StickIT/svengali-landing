@@ -150,7 +150,7 @@ section.presentation {
 section.slider{ 
 
     padding-top: var(--section-spacing);
-    padding-bottom: var(--section-spacing);
+    padding-bottom: calc(1rem + var(--space-xl) + var(--section-spacing) *1);
     background:
         var(--Background-Section),
         url('/images/wallpaper-pattern-repeat.jpg') repeat center / 800px;
@@ -158,25 +158,28 @@ section.slider{
     .container {
         display: flex;
         /* Base slide width variable (can be overridden per breakpoint) */
+        /* Mobile-first: smallest default, then increase at larger breakpoints */
         --slide-w: 520px;
 
         /* Responsive widths for slides */
-        @include responsive('sm') {
-          --slide-w: 360px;
+        @include responsive('lg') {
+          --slide-w: 480px;
         }
         @include responsive('md') {
           --slide-w: 420px;
         }
-        @include responsive('lg') {
-          --slide-w: 480px;
+        @include responsive('sm') {
+          --slide-w: 80vw;
         }
-        @include responsive('xl') {
-          --slide-w: 520px;
+        @include responsive('xs') {
+            --slide-w: 85vw;
         }
 
       .swiper-container {
         width: 100%;
         overflow: visible;
+        /* Ensure room for pagination inside flow */
+        padding-bottom: var(--space-l);
       }
       
       .swiper-slide {
@@ -209,7 +212,7 @@ section.slider{
           display: block;
           width: 100%;
           height: 100%;
-          object-fit: contain;
+          object-fit: fill;
         }
       }
       
@@ -242,23 +245,37 @@ section.slider{
       }
 
       .swiper-pagination{
-        position: relative;
-        padding-top: var(--space-xl);
+        /* Keep pagination in normal flow so it counts in container height */
+        position: static;
+        margin-top: var(--space-xl);
+
+        @include responsive('xs') {
+            margin-top: var(--space-l);
+        }
 
         .swiper-pagination-bullet{
-            background: var(--ColorRed);
-            opacity: 0.5;
             width: 1rem;
             height: 1rem;
             border-radius: 50%;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, .25), inset 0 2px 10px rgba(0, 0, 0, .25), inset 0 -2px 6px rgba(0, 0, 0, .15);
             isolation: isolate;
-            filter: brightness(1) contrast(1.1);
-            border: .1em solid rgba(var(--ColorRed-RGB), .75);
+            opacity: 1;
+            background: var(--ColorOnyx);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .25), inset 0 2px 10px rgba(0, 0, 0, .25), inset 0 -2px 6px rgba(0, 0, 0, .15);
+            border: .1em solid rgba(var(--ColorOnyx-RGB), .75);
+            filter: brightness(1.5) contrast(1);
+
+            @include responsive('xs') {
+                width: .75rem;
+                height: .75rem;
+            }
         }
 
         .swiper-pagination-bullet-active{
             opacity: 1;
+            background: var(--ColorGoldLight);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .25), inset 0 2px 10px rgba(0, 0, 0, .25), inset 0 -2px 6px rgba(0, 0, 0, .15);
+            border: .1em solid rgba(var(--ColorGoldLight-RGB), .75);
+            filter: brightness(1) contrast(1);
         }
       }
     }
