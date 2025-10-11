@@ -20,6 +20,7 @@
     "@shoelace-style/shoelace": "^2.15.1",
     "@splidejs/splide": "^4.1.4",
     "i18next": "^25.5.2",
-    "i18next-browser-languagedetector": "^8.2.0"
+    "i18next-browser-languagedetector": "^8.2.0",
+    "swiper": "^4.4.2"
   }
 }
