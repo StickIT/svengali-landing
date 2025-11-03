@@ -247,6 +247,11 @@ section.slider{
             font-style: normal;
         }
       }
+      
+      .swiper-scrollbar{
+        background: transparent;
+        opacity: 0;
+      }
 
       .swiper-pagination{
         /* Keep pagination in normal flow so it counts in container height */
