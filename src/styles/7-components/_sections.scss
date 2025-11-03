@@ -251,10 +251,10 @@ section.slider{
       .swiper-pagination{
         /* Keep pagination in normal flow so it counts in container height */
         position: static;
-        margin-top: var(--space-xl);
+        margin-top: var(--space-l);
 
         @include responsive('xs') {
-            margin-top: var(--space-l);
+            margin-top: var(--space-s);
         }
 
         .swiper-pagination-bullet{
@@ -269,8 +269,8 @@ section.slider{
             filter: brightness(1.5) contrast(1);
 
             @include responsive('xs') {
-                width: .75rem;
-                height: .75rem;
+                width: .65rem;
+                height: .65rem;
             }
         }
 
