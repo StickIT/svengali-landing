@@ -160,7 +160,7 @@ section.slider{
         display: flex;
         /* Base slide width variable (can be overridden per breakpoint) */
         /* Mobile-first: smallest default, then increase at larger breakpoints */
-        --slide-w: 520px;
+        --slide-w: 480px;
 
         /* Responsive widths for slides */
         @include responsive('lg') {
