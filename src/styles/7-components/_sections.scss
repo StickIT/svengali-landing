@@ -164,7 +164,7 @@ section.slider{
 
         /* Responsive widths for slides */
         @include responsive('lg') {
-          --slide-w: 480px;
+          --slide-w: 460px;
         }
         @include responsive('md') {
           --slide-w: 420px;
