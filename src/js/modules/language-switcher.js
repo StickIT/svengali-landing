@@ -169,6 +169,14 @@ class LanguageSwitcher {
       }
     });
 
+    // Mettre à jour les attributs placeholder
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+      const key = element.getAttribute('data-i18n-placeholder');
+      if (key) {
+        element.placeholder = i18n.t(key);
+      }
+    });
+
     // Mettre à jour les attributs meta
     document.documentElement.lang = this.currentLanguage;
     document.title = i18n.t('meta.title');

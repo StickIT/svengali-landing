@@ -165,6 +165,12 @@ export default defineConfig({
             return val !== undefined ? `${pre}${String(val)}${post}` : m
           })
 
+          // data-i18n-placeholder
+          out = out.replace(/(<[^>]*data-i18n-placeholder="([^"]+)"[^>]*placeholder=")([^"]*)("[^>]*>)/g, (m, pre, key, text, post) => {
+            const val = getByPath(dict, key)
+            return val !== undefined ? `${pre}${String(val)}${post}` : m
+          })
+
           // data-i18n-html (remplacer le innerHTML par contenu riche localisé, après sanitation)
           // Implémentation robuste avec gestion de l'imbrication du même tag (ex: <span> dans <span>)
           const replaceDataI18nHtml = (markup) => {
