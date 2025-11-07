@@ -11,6 +11,7 @@
 @use "sass:map";
 
 /* Breakpoints (tes valeurs) */
+$breakpoint-fullhd: 1919px;
 $breakpoint-xl: 1279px;
 $breakpoint-lg: 1023px;
 $breakpoint-md: 767px;
@@ -25,7 +26,8 @@ $breakpoints: (
   'sm':  $breakpoint-sm,
   'md':  $breakpoint-md,
   'lg':  $breakpoint-lg,
-  'xl':  $breakpoint-xl
+  'xl':  $breakpoint-xl,
+  'fullhd': $breakpoint-fullhd
 ) !default;
 
 /* max-width */

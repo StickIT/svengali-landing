@@ -294,17 +294,20 @@ section.slider{
             --slide-l: 1080px;
 
             /* Responsive widths for slides */
+            @include responsive('fullhd') {
+                --slide-l: 920px;
+            }
             @include responsive('xl') {
-            --slide-l: 920px;
+                --slide-l: 720px;
             }
             @include responsive('lg') {
-            --slide-l: 640px;
+                --slide-l: 640px;
             }
             @include responsive('md') {
-            --slide-l: 85vw;
+                --slide-l: 85vw;
             }
             @include responsive('sm') {
-            --slide-l: 90vw;
+                --slide-l: 90vw;
             }
             @include responsive('xs') {
                 --slide-l: 90vw;
