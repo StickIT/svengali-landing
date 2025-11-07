@@ -174,7 +174,8 @@
     "ja": "日本語"
   },
   "social": {
-    "instagram": "Instagram"
+    "instagram_alt": "インスタグラムのリンク",
+    "map_alt": "グーグルマップのリンク"
   },
   "common": {
     "currency_symbol": "¥"

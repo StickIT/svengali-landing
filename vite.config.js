@@ -153,22 +153,36 @@ export default defineConfig({
             return val !== undefined ? `${open}${String(val)}${close}` : m
           })
 
-          // data-i18n-alt
-          out = out.replace(/(<[^>]*data-i18n-alt="([^"]+)"[^>]*alt=")([^"]*)("[^>]*>)/g, (m, pre, key, text, post) => {
+          // data-i18n-alt (remplacer ou insérer l'attribut alt)
+          out = out.replace(/(<[^>]*data-i18n-alt="([^"]+)"[^>]*)(>)/g, (m, pre, key, close) => {
             const val = getByPath(dict, key)
-            return val !== undefined ? `${pre}${String(val)}${post}` : m
+            if (val === undefined) return m
+            if (/\salt=\"[^\"]*\"/i.test(pre)) {
+              // remplacer la valeur existante
+              return pre.replace(/\salt=\"[^\"]*\"/i, ` alt="${String(val)}"`) + close
+            }
+            // insérer l'attribut manquant
+            return `${pre} alt="${String(val)}"${close}`
           })
 
-          // data-i18n-title
-          out = out.replace(/(<[^>]*data-i18n-title="([^"]+)"[^>]*title=")([^"]*)("[^>]*>)/g, (m, pre, key, text, post) => {
+          // data-i18n-title (remplacer ou insérer l'attribut title)
+          out = out.replace(/(<[^>]*data-i18n-title="([^"]+)"[^>]*)(>)/g, (m, pre, key, close) => {
             const val = getByPath(dict, key)
-            return val !== undefined ? `${pre}${String(val)}${post}` : m
+            if (val === undefined) return m
+            if (/\stitle=\"[^\"]*\"/i.test(pre)) {
+              return pre.replace(/\stitle=\"[^\"]*\"/i, ` title="${String(val)}"`) + close
+            }
+            return `${pre} title="${String(val)}"${close}`
           })
 
-          // data-i18n-placeholder
-          out = out.replace(/(<[^>]*data-i18n-placeholder="([^"]+)"[^>]*placeholder=")([^"]*)("[^>]*>)/g, (m, pre, key, text, post) => {
+          // data-i18n-placeholder (remplacer ou insérer l'attribut placeholder)
+          out = out.replace(/(<[^>]*data-i18n-placeholder="([^"]+)"[^>]*)(>)/g, (m, pre, key, close) => {
             const val = getByPath(dict, key)
-            return val !== undefined ? `${pre}${String(val)}${post}` : m
+            if (val === undefined) return m
+            if (/\splaceholder=\"[^\"]*\"/i.test(pre)) {
+              return pre.replace(/\splaceholder=\"[^\"]*\"/i, ` placeholder="${String(val)}"`) + close
+            }
+            return `${pre} placeholder="${String(val)}"${close}`
           })
 
           // data-i18n-html (remplacer le innerHTML par contenu riche localisé, après sanitation)
