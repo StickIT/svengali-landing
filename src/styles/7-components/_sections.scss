@@ -273,7 +273,7 @@ section.slider{
             border: .1em solid rgba(var(--ColorOnyx-RGB), .75);
             filter: brightness(1.5) contrast(1);
 
-            @include responsive('xs') {
+            @include responsive('xsm') {
                 width: .65rem;
                 height: .65rem;
             }
