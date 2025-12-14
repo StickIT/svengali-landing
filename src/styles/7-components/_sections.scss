@@ -539,6 +539,8 @@ section.tickets {
                         display: flex;
                         flex-direction: column;
 
+                        margin-bottom: clamp(16px, 3vw, 28px);
+
                         .price-now {
                             line-height: 1.1em;
                             font-weight: bold;

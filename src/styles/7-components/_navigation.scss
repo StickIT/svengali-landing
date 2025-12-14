@@ -17,9 +17,9 @@ body.no-scroll {
     flex-direction: row-reverse;
   }
 
-  @include responsive ('lg') {
-    flex-direction: row;
-  }
+//   @include responsive ('lg') {
+//     flex-direction: row-reverse;
+//   }
 }
 
 /* Promotion Top-Bar */
@@ -87,17 +87,21 @@ body.no-scroll {
             font-size: var(--fluid--1);
             
             @include responsive('lg') {
-                position: static;
-                left: auto;
+                position: absolute;
+                left: 0;
                 transform: none;
-                display: block;
                 width: 100%;
                 text-align: center;
                 white-space: normal;
-                overflow-wrap: break-word; /* Remplace anywhere pour Safari */
-                word-break: keep-all; /* Alternative à auto-phrase */
+                overflow-wrap: break-word;
+                word-break: keep-all;
                 hyphens: auto;
-                -webkit-hyphens: auto; /* Préfixe WebKit pour Safari */
+                -webkit-hyphens: auto;
+            }
+
+            @include responsive('sm') {
+                position: static;
+                left: auto;
             }
             
             &> span {
