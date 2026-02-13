@@ -34,6 +34,8 @@ section.intro {
         h2 {
             margin: 0;
             text-shadow: var(--text-shadow);
+            // font-size: calc(var(--fluid-5) - 0.6em);
+            font-size: var(--fluid-5);
         }
 
         p {
@@ -518,9 +520,10 @@ section.tickets {
                     .information {
                         display: flex;
                         flex-direction: column;
-                        gap: var(--space-2xs);
+                        gap: var(--space-s);
                         font-size: var(--fluid-1);
                         letter-spacing: -0.025em;
+                        padding: 0 var(--space-m);
 
                         .num {
 
@@ -546,7 +549,7 @@ section.tickets {
                             font-weight: bold;
 
                             span:not(.currency){
-                                line-height: 1.25em;
+                                line-height: 1em;
                                 font-size: var(--fluid-5);
                                 font-family: 'Sedan', serif;
                                 font-weight: bold;

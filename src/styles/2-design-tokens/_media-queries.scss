@@ -18,9 +18,11 @@ $breakpoint-md: 767px;
 $breakpoint-sm: 639px;
 $breakpoint-xsm: 519px;
 $breakpoint-xs: 389px;
+$breakpoint-xxs: 360px;
 
 /* Map (clés en CHAÎNES pour matcher les appels 'xl', 'md', etc.) */
 $breakpoints: (
+  'xxs':  $breakpoint-xxs,
   'xs':  $breakpoint-xs,
   'xsm': $breakpoint-xsm,
   'sm':  $breakpoint-sm,

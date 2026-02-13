@@ -23,7 +23,7 @@
     "january": "January",
     "cta": "GET YOUR TICKETS!",
     "ordinal_th": "th",
-    "banner_html": "UNLOCK THE UNSEEN : AN UNIQUE IMMERSIVE EXPERIENCE"
+    "banner_html": "AN IMMERSIVE MASKED CABARET SHOW HIDDEN IN KYOTO"
   },
   "brand": {
     "header_html": "<span class=\"left\">SVENGALI</span><span class=\"sep\"> | </span><span class=\"right\">ABRA-CADABRA Ltd.</span>"
@@ -50,9 +50,9 @@
     "aria_label": "Theatre stage with curtains"
   },
   "booking": {
-    "title": "Join the Svengali Gatherings",
+    "title": "Masked Show & Late-Night Bar",
     "online_only": "Online Reservation Only",
-    "subtitle_html": "<span class=\"num\">6:00</span> PM or <span class=\"num\">9:00</span> PM <span class=\"sep\">|</span> <span class=\"jump\">Online Reservation Only</span>"
+    "subtitle_html": "Show at <span class=\"num\">8:30</span> PM (Ticketed)<span class=\"sep\">|</span><span class=\"jump\">Bar from <span class=\"num\">10:30</span> PM (Free Entry)</span>"
   },
   "intro": {
     "title": "Svengali invites you to his castle in the heart of Kyoto",
@@ -74,29 +74,27 @@
       "title_html": "Silver <span>Ticket</span>",
       "price_now": "10,000",
       "price_original": "15,000",
-      "access": "Access to the show of 90 minutes",
-      "access_html": "Access to the show of <span class=\"num duration\">90</span> minutes",
-      "seating": "Experience the show from the balcony or on the side of the 1st floor",
-      "seating_html": "Experience the show <b>from the balcony or on the side of the <span class=\"num bold\">1</span><sup>st</sup> floor</b>",
-      "drinks": "Drinks included",
-      "costume": "Cloak and mask provided"
+      "intro_html": "Multiple seating options available",
+      "access_html": "Access to the immersive cabaret show of <span class=\"num duration\">90</span> minutes",
+      "seating_html": "Experience the show <b>from the balcony</b> or <b>on the side of the <span class=\"num bold\">1</span><sup>st</sup> floor</b>",
+      "drinks_html": "<b>Two craft cocktails</b> and <b>champagne</b> included",
+      "costume": "Cloak and handcrafted mask provided"
     },
     "gold": {
       "title": "Gold Ticket",
       "title_html": "Gold <span>Ticket</span>",
       "price_now": "15,000",
       "price_original": "20,000",
-      "access": "Access to the show of 90 minutes",
-      "access_html": "Access to the show of <span class=\"num duration\">90</span> minutes",
-      "seating": "Experience the show directly in front of the stage with premium seats",
-      "seating_html": "Experience the show <b>directly in front of the stage with premium seats</b>",
-      "drinks": "Drinks included",
-      "costume": "Cloak and mask provided"
+      "intro_html": "<b>Premium seating</b>",
+      "access_html": "Access to the immersive cabaret show of <span class=\"num duration\">90</span> minutes",
+      "seating_html": "Experience the show <b>directly in front of the stage</b> with <b>premium seats</b>",
+      "drinks_html": "<b>Two craft cocktails</b> and <b>champagne</b> included",
+      "costume": "Cloak and handcrafted mask provided"
     }
   },
   "notice": {
     "title": "Important Notice",
-    "description": "For a smoother experience, please take a moment to read our rules and FAQ before your visit"
+    "description_html": "<li>Special requests or group bookings,</br> please contact us via <a class=\"link\" href=\"https://www.instagram.com/svengali_kyoto/\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram DM</a></li><li>For a smoother experience, please take a moment to read our rules and FAQ before your visit</li>"
   },
   "location": {
     "title": "How to get to Svengali Castle?",

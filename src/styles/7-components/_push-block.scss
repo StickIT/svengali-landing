@@ -15,9 +15,8 @@
 
     &.important{
         .content{
-            p{
-                max-width: 520px;
-            }
+            max-width: 520px;
+            gap: 1rem;
         }
     }
 
@@ -68,7 +67,7 @@
 
     h1, h3 {
         margin: 0;
-        padding: 1rem;
+        padding: 1.25rem;
         font-size: var(--fluid-4);
         text-align: center;
         background: radial-gradient(circle at center,
@@ -81,7 +80,16 @@
         filter: drop-shadow(1px 2px 4px rgba(var(--ColorBlack-RGB,.75)));
     }
 
-    p{
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    p, li{
         margin: 0;
         font-size: var(--fluid-1);
         text-align: center;
@@ -101,6 +109,13 @@
 
             .jump{
                 display: block;
+            }
+        }
+
+        @include responsive ('xsm'){
+
+            br{
+                display: none;
             }
         }
 

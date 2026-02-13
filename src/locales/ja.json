@@ -23,7 +23,7 @@
     "january": "1月",
     "cta": "チケットを購入！",
     "ordinal_th": "日",
-    "banner_html": "見えざる世界への扉を開く：唯一無二のイマーシブ体験"
+    "banner_html": "京都に隠された、没入型仮面キャバレーショー"
   },
   "brand": {
     "header_html": "<span class=\"left\">SVENGALI</span><span class=\"sep\"> | </span><span class=\"right\">ABRA-CADABRA Ltd.</span>"
@@ -50,9 +50,9 @@
     "aria_label": "カーテンがある劇場の舞台"
   },
   "booking": {
-    "title": "Svengaliの集いに参加",
+    "title": "仮面ショー＆深夜営業のバー",
     "online_only": "オンライン予約はこちらから",
-    "subtitle_html": "<span class=\"num\">午後6:00</span>または<span class=\"num\">午後9:00</span> <span class=\"sep\">|</span> <span class=\"jump\">オンライン予約はこちらから</span>"
+    "subtitle_html": "<span class=\"num\">20:30</span> ショー開始（チケット制）<span class=\"sep\">|</span><span class=\"jump\">  <span class=\"num\">22:30</span> バー営業（入場無料）</span>"
   },
   "intro": {
     "title": "Svengaliが京都の中心にある館へとあなたをご招待いたします",
@@ -74,29 +74,27 @@
       "title_html": "シルバー <span>チケット</span>",
       "price_now": "10,000",
       "price_original": "15,000",
-      "access": "90分のショーへのアクセス",
-      "access_html": "<span class=\"num duration\">90</span>分のショーへのアクセス",
-      "seating": "バルコニーまたは1階サイドからショーを体験",
-      "seating_html": "<b>バルコニーまたは<span class=\"num bold\">1</span><sup>階</sup>サイドからショーを体験</b>",
-      "drinks": "ドリンク込み",
-      "costume": "クロークとマスク提供"
+      "intro_html": "選べるお座席タイプ",
+      "access_html": "<span class=\"num duration\">90</span>分間の没入型キャバレーショーへのご招待",
+      "seating_html": "<b>バルコニーまたは<span class=\"num bold\">1</span>階サイドからショーを体験</b>",
+      "drinks_html": "<b><span class=\"num duration bold\">2</span>杯のクラフトカクテル</b>と<b>シャンパン</b>が含まれています",
+      "costume": "ハンドメイドの仮面とケープを無料貸出"
     },
     "gold": {
       "title": "ゴールドチケット",
       "title_html": "ゴールド <span>チケット</span>",
       "price_now": "15,000",
       "price_original": "20,000",
-      "access": "90分のショーへのアクセス",
-      "access_html": "<span class=\"num duration\">90</span>分のショーへのアクセス",
-      "seating": "プレミアムシートで舞台真正面からショーを体験",
+      "intro_html": "<b>特等席</b>",
+      "access_html": "<span class=\"num duration\">90</span>分間の没入型キャバレーショーへのご招待",
       "seating_html": "<b>プレミアムシートで舞台真正面からショーを体験</b>",
-      "drinks": "ドリンク込み",
-      "costume": "クロークとマスク提供"
+      "drinks_html": "<b><span class=\"num duration bold\">2</span>杯のクラフトカクテル</b>と<b>シャンパン</b>が含まれています",
+      "costume": "ハンドメイドの仮面とケープを無料貸出"
     }
   },
   "notice": {
     "title": "重要なお知らせ",
-    "description": "スムーズな体験のため、ご来場前にルール・FAQをお読みください"
+    "description_html": "<li>特別なリクエストや団体のご予約については、<a class=\"link\" href=\"https://www.instagram.com/svengali_kyoto/\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram DM</a> にてお問い合わせください</li><li>スムーズな体験のため、ご来場前にルール・FAQをお読みください</li>"
   },
   "location": {
     "title": "Svengaliへの行き方は？",
