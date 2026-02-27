@@ -940,6 +940,7 @@ section.rules {
         }
 
         article.important-message {
+            max-width: 980px;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -947,7 +948,7 @@ section.rules {
             color: var(--ColorBlack);
             overflow: hidden;
             gap: var(--space-l);
-            padding: var(--space-xl-2xl);
+            padding: var(--space-2xl) var(--space-2xl);
             border-image-source: url('/images/message-bg.svg');
             border-image-repeat: stretch stretch;
             border-image-outset: 0;
@@ -960,7 +961,7 @@ section.rules {
             z-index: 0;
 
             .content {
-                max-width: 75%;
+                max-width: 70%;
                 text-align: center;
                 display: flex;
                 align-items: center;
@@ -969,7 +970,7 @@ section.rules {
                 // margin: 0 20%;
 
                 @include responsive ('sm'){
-                    max-width: 85%;
+                    max-width: 90%;
                 }
 
                 h3 {
