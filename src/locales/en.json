@@ -50,9 +50,9 @@
     "aria_label": "Theatre stage with curtains"
   },
   "booking": {
-    "title": "Masked Show & Late-Night Bar",
+    "title": "Masked Show Gatherings",
     "online_only": "Online Reservation Only",
-    "subtitle_html": "Show at <span class=\"num\">8:30</span> PM (Ticketed)<span class=\"sep\">|</span><span class=\"jump\">Bar from <span class=\"num\">10:30</span> PM (Free Entry)</span>"
+    "subtitle_html": "Join the immersive show at <span class=\"num\">8:30</span> PM"
   },
   "intro": {
     "title": "Svengali invites you to his castle in the heart of Kyoto",
