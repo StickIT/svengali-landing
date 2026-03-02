@@ -50,9 +50,9 @@
     "aria_label": "カーテンがある劇場の舞台"
   },
   "booking": {
-    "title": "仮面ショー＆深夜営業のバー",
-    "online_only": "オンライン予約はこちらから",
-    "subtitle_html": "<span class=\"num\">20:30</span> ショー開始（チケット制）<span class=\"sep\">|</span><span class=\"jump\">  <span class=\"num\">22:30</span> バー営業（入場無料）</span>"
+    "title": "仮面ショーの集い (Masked Show Gatherings)",
+    "online_only": "オンライン予約限定",
+    "subtitle_html": "<span class=\"num\">20:30からの没入型ショーにご参加ください"
   },
   "intro": {
     "title": "Svengaliが京都の中心にある館へとあなたをご招待いたします",
