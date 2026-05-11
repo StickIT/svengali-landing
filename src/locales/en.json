@@ -23,7 +23,7 @@
     "january": "January",
     "cta": "GET YOUR TICKETS!",
     "ordinal_th": "th",
-    "banner_html": "AN IMMERSIVE MASKED CABARET SHOW HIDDEN IN KYOTO"
+    "banner_html": "AN IMMERSIVE MASKED CABARET SHOW IN KYOTO"
   },
   "brand": {
     "header_html": "<span class=\"left\">SVENGALI</span><span class=\"sep\"> | </span><span class=\"right\">ABRA-CADABRA Ltd.</span>"
@@ -50,9 +50,9 @@
     "aria_label": "Theatre stage with curtains"
   },
   "booking": {
-    "title": "Masked Show Gatherings",
+    "title": "Join the Svengali Show",
     "online_only": "Online Reservation Only",
-    "subtitle_html": "Join the immersive show at <span class=\"num\">8:30</span> PM"
+    "subtitle_html": "A unique and unforgettable</br> experience in hidden Kyoto"
   },
   "intro": {
     "title": "Svengali invites you to his castle in the heart of Kyoto",
@@ -65,20 +65,32 @@
   },
   "tickets": {
     "title": "Choose your Experience",
+    "subtitle_html": "Join the immersive show at <span class=\"num\">8:00</span> PM",
     "discount_text": "discount until",
     "common": {
       "price_note_html": "¥<span class=\"num\">5,000</span> discount until <span class=\"num\">13</span><sup>th</sup> January"
+    },
+    "bronze": {
+      "title": "Bronze Ticket",
+      "title_html": "Bronze <span>Ticket</span>",
+      "price_now": "5,000",
+      "price_original": "5,000",
+      "intro_html": "Standard seating",
+      "access_html": "Admission to the <span class=\"num duration\">90</span> minutes show",
+      "seating_html": "Enjoy the show from the balcony or side seats",
+      "costume": "Cloak and handcrafted mask provided",
+      "drinks_html": "Drinks not included"
     },
     "silver": {
       "title": "Silver Ticket",
       "title_html": "Silver <span>Ticket</span>",
       "price_now": "10,000",
       "price_original": "15,000",
-      "intro_html": "Multiple seating options available",
-      "access_html": "Access to the immersive cabaret show of <span class=\"num duration\">90</span> minutes",
-      "seating_html": "Experience the show <b>from the balcony</b> or <b>on the side of the <span class=\"num bold\">1</span><sup>st</sup> floor</b>",
-      "drinks_html": "<b>Two craft cocktails</b> and <b>champagne</b> included",
-      "costume": "Cloak and handcrafted mask provided"
+      "intro_html": "Standard seating",
+      "access_html": "Admission to the <span class=\"num duration\">90</span> minutes show",
+      "seating_html": "Enjoy the show from the balcony or side seats",
+      "costume": "Cloak and handcrafted mask provided",
+      "drinks_html": "<b>Two craft cocktails</b> and <b>champagne</b> included"
     },
     "gold": {
       "title": "Gold Ticket",
@@ -86,15 +98,15 @@
       "price_now": "15,000",
       "price_original": "20,000",
       "intro_html": "<b>Premium seating</b>",
-      "access_html": "Access to the immersive cabaret show of <span class=\"num duration\">90</span> minutes",
-      "seating_html": "Experience the show <b>directly in front of the stage</b> with <b>premium seats</b>",
-      "drinks_html": "<b>Two craft cocktails</b> and <b>champagne</b> included",
-      "costume": "Cloak and handcrafted mask provided"
+      "access_html": "Admission to the <span class=\"num duration\">90</span> minutes show",
+      "seating_html": "Be <b>in the heart of the show</b>, right by the artists",
+      "costume": "Cloak and handcrafted mask provided",
+      "drinks_html": "<b>Two craft cocktails</b> and <b>champagne</b> included"
     }
   },
   "notice": {
     "title": "Important Notice",
-    "description_html": "<li>Special requests or group bookings,</br> please contact us via <a class=\"link\" href=\"https://www.instagram.com/svengali_kyoto/\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram DM</a></li><li>For a smoother experience, please take a moment to read our rules and FAQ before your visit</li>"
+    "description_html": "<li>Need help for your reservation / special request? Please contact us via <a class=\"link\" href=\"https://www.instagram.com/svengali_kyoto/\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram DM</a></li><li>Walking accepted from 7:30 PM to 8:00 PM, before the show starts</li>"
   },
   "location": {
     "title": "How to get to Svengali Castle?",
@@ -112,12 +124,12 @@
   "rules": {
     "title": "Svengali's Rules",
     "important_title": "IMPORTANT MESSAGE",
-    "rules_html": "<ul><li>Admission is for <b>16 and above.</b></li><li><b>Svengali is not responsible</b> for any accidents, injuries, or damages at our venue.</li><li><b>The mask and cloak provided</b> at the Castle must be worn during the show.</li><li><b>Reservation are highly recommended</b> — Walk-ins accepted depending on availability, until the show begins.</li></ul>"
+    "rules_html": "<ul><li>Admission is for <b>14 and above.</b></li><li><b>Svengali is not responsible</b> for any accidents, injuries, or damages at our venue.</li><li><b>The mask and cloak provided</b> at the Castle must be worn during the show.</li><li><b>Reservation are highly recommended</b> — Walk-ins accepted depending on availability, until the show begins.</li></ul>"
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "q1": "At what time the gathering is starting?",
-    "a1_html": "<p>Doors open 30 minutes before the show. Please arrive no later than <b>20 minutes before it begins</b>.</p>",
+    "q1": "What time does the experience start",
+    "a1_html": "<p>Doors open at <span class=\"num\">8:00</span>PM. <b>Please arrive early</b>.</p>",
     "q3": "I don't have reservation is walk in ok?",
     "a3_html": "<p><b>Yes, walk-ins may be accepted depending on availability, until the show begins</b>. Svengali is an intimate experience with limited seating.</p><p>To ensure the best experience for everyone, entry is only possible before the start of the show. For guaranteed access and your preferred time, we strongly recommend booking in advance.</p>",
     "q4": "Is the show every night the same?",
@@ -137,13 +149,13 @@
     "q11": "Is it possible to drink while having a mask on?",
     "a11_html": "<p>Yes, our masks are <b>specially designed to allow drinking</b> while wearing them, so you can enjoy your beverages throughout the event.</p>",
     "q12": "Is kids allowed to the show?",
-    "a12_html": "<p>The minimum age required for the show is <b><span class=\"num\">16</span> years old</b>, so unfortunately, kids are not allowed to attend.</p>",
+    "a12_html": "<p>The minimum age required for the show is <b><span class=\"num\">14</span> years old</b>, so unfortunately, kids are not allowed to attend.</p>",
     "q13": "Can I smoke at the venue?",
     "a13_html": "<p><b>No smoking</b> is allowed anywhere in the venue.</p>",
     "q14": "I have some allergies what should I do?",
     "a14_html": "<p>Please <b>inform our staff about any allergies</b> when you arrive.</p><p>We'll review everything with you at the entrance to ensure your safety and comfort.</p>",
-    "q15": "Is any facilities for wheelchair?",
-    "a15_html": "<p>No, unfortunately, the venue and facilities are <b>not arranged or equipped for wheelchair accessibility</b>.</p>",
+    "q15": "Can I order drinks?",
+    "a15_html": "<p>Drinks included with Gold and Silver tickets are served during the performance as part of the experience itself.</p><p><b>Additional drinks may be enjoyed before the show until 8:20 PM.</b></p><p>After the performance, the House of Curiosities remains open, and <b>the evening continues with cocktails, champagne, music, and encounters with the artists.</b></p>",
     "q16": "What should I expect to see?",
     "a16_html": "<p>Prepare for an <b>unforgettable experience</b> featuring amazing artists in a show unlike any other.</p><p>You'll embark on a transformative journey from darkness to light, filled with mystery, artistry, and wonder that will stay with you long after the final curtain.</p>"
   },
