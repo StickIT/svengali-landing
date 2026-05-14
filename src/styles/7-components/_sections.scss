@@ -690,7 +690,7 @@ section.location {
                 width: var(--size-butterfly-width);
                 height: var(--size-butterfly-height);
                 transform-origin: 50% 50%;
-                background: url("/images/Butterfly.png") center/contain no-repeat;
+                background: url("/images/Butterfly.webp") center/contain no-repeat;
                 pointer-events: none;
                 animation: butterfly-fly 8s ease-in-out infinite;
                 filter: drop-shadow(0 1px 8px rgba(var(--ColorBlack-RGB, 1)));

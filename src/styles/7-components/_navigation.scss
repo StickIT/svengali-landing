@@ -378,7 +378,7 @@ body.no-scroll {
                 rgba(var(--ColorBlack-RGB), 0) 75%,
                 rgba(var(--ColorBlack-RGB), .5) 95%,
                 rgba(var(--ColorBlack-RGB), .5) 100%),
-            url('/images/StarsPainting.jpg') center/cover no-repeat;
+            url('/images/StarsPainting.webp') center/cover no-repeat;
 
         border-image-source: url('/images/FrameBorder.webp');
         border-image-repeat: stretch stretch;
