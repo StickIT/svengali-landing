@@ -241,6 +241,7 @@ header.hero {
         z-index: 10;
         display: grid;
         place-items: center;
+        opacity: 0;
 
         button.video {
             width: var(--size-btn-video);
