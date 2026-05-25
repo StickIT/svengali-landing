@@ -111,7 +111,7 @@
   "location": {
     "title": "How to get to Svengali Castle?",
     "address": "7th Floor, Nakagyo Ward, Bizenjimach, 604-8023 Kyoto, Japan",
-    "address_html": "ＰＬＥＸＵＳ, <span class=\"num\">7</span><sup>th</sup> Floor, Nakagyo Ward, Bizenjimachō, 〒<span>604-8023</span> Kyoto, Japan",
+    "address_html": "ＰＬＥＸＵＳ, <span class=\"num\">7</span><sup>th</sup> Floor, Nakagyo Ward, Bizenjimachō, 〒<span class=\"num\">604-8023</span> Kyoto, Japan",
     "access_title": "Access",
     "metro_title": "Metro",
     "metro_1": "Gion-Shijo / Sanjo Station Keihan Line",
