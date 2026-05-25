@@ -547,7 +547,7 @@ section.tickets {
                         align-items: center;
                         gap: var(--space-l);
                         width: 100%;
-                        margin-block: clamp(16px, 3vw, 28px);
+                        margin-block: clamp(12px, 3vw, 28px);
 
                         &::before,
                         &::after {
@@ -595,6 +595,10 @@ section.tickets {
 
                         @include responsive ('lg') {
                             padding: 0 var(--space-m);
+                        }
+
+                        @include responsive ('sm') {
+                           gap: var(--space-xs);
                         }
 
                         .num {
