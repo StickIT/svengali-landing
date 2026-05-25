@@ -423,7 +423,7 @@ section.tickets {
             @include responsive ('md') {
 
                 .ticket {
-                    max-width: 380px !important;
+                    max-width: 340px !important;
                 }
             }
 
@@ -466,7 +466,9 @@ section.tickets {
                 }
 
                 &.gold {
-                    border-image-source: url('/images/ticket-bg-gold.svg');
+                    &::after{
+                        border-image-source: url('/images/ticket-bg-gold.svg');
+                    }
 
                     .decoration {
 
@@ -484,7 +486,9 @@ section.tickets {
                 }
 
                 &.bronze {
-                    border-image-source: url('/images/ticket-bg-bronze.svg');
+                    &::after{
+                        border-image-source: url('/images/ticket-bg-bronze.svg');
+                    }
 
                     .decoration {
 
@@ -508,7 +512,7 @@ section.tickets {
                     justify-content: space-between;
                     color: var(--ColorDark);
                     // background-color: var(--ColorWhite);
-                    margin: clamp(1.5rem, 4vw, 3rem);
+                    margin: clamp(2.5rem, 4vw, 4rem);
                     // gap: .5rem;
 
                     header {
