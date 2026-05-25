@@ -406,7 +406,7 @@ section.tickets {
             // flex-direction: row-reverse;
 
             @include responsive ('xl') {
-                gap: var(--space-m);
+                gap: var(--space-l);
                 justify-content: space-around;
             }
 
@@ -598,7 +598,7 @@ section.tickets {
                         }
 
                         @include responsive ('sm') {
-                           gap: var(--space-xs);
+                           gap: 0.5rem;
                         }
 
                         .num {
