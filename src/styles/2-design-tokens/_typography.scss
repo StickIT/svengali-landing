@@ -46,6 +46,10 @@ span, p{
     font-family: 'Sedan', serif;
     font-weight: normal;
     font-variant-numeric: lining-nums proportional-nums;
+
+    &.bold{
+        font-weight: bold;
+    }
 }
 
 //  /**

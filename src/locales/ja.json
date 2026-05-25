@@ -76,7 +76,7 @@
       "price_now": "5,000",
       "price_original": "5,000",
       "intro_html": "スタンダードシート",
-      "access_html": "90分ショーへの<span class=\"num duration\">90</span>分間のご入場",
+      "access_html": "<span class=\"num duration\">90</span>分ショーへの<span class=\"num duration\">90</span>分間のご入場",
       "seating_html": "バルコニーまたはサイドシートよりショーをお楽しみください",
       "costume": "クロークと手作りマスクをご用意しております",
       "drinks_html": "ドリンクは含まれておりません"
@@ -90,7 +90,7 @@
       "access_html": "<span class=\"num duration\">90</span>分ショーへのご入場",
       "seating_html": "バルコニーまたはサイドシートよりショーをお楽しみください",
       "costume": "クロークと手作りマスクをご用意しております",
-      "drinks_html": "<b>クラフトカクテル2杯</b>と<b>シャンパン</b>付き"
+      "drinks_html": "<b>クラフトカクテル<span class=\"num bold\">2</span>杯</b>と<b>シャンパン</b>付き"
     },
     "gold": {
       "title": "ゴールドチケット",
@@ -101,7 +101,7 @@
       "access_html": "<span class=\"num duration\">90</span>分ショーへのご入場",
       "seating_html": "<b>ショーの中心</b>で、アーティストのすぐそばでご体験ください",
       "costume": "クロークと手作りマスクをご用意しております",
-      "drinks_html": "<b>クラフトカクテル2杯</b>と<b>シャンパン</b>付き"
+      "drinks_html": "<b>クラフトカクテル<span class=\"num bold\">2</span>杯</b>と<b>シャンパン</b>付き"
     }
   },
   "notice": {
@@ -124,9 +124,9 @@
   "rules": {
     "title": "Svengaliのルール",
     "important_title": "重要なメッセージ",
-    "rules_html": "<ul><li>入場は<b>14歳以上</b>です。</li><li><b>Svengaliは当会場での</b>事故、怪我、損害について責任を負いません。</li><li><b>城で提供されるマスクとクローク</b>は、ショー中に着用する必要があります。</li><li><b>事前のご予約を強くお勧めいたします</b> — 当日入場は空席状況により、開演前まで承ります。</li></ul>",
+    "rules_html": "<ul><li>入場は<b><span class=\"num bold\">14</span>歳以上</b>です。</li><li><b>Svengaliは当会場での</b>事故、怪我、損害について責任を負いません。</li><li><b>城で提供されるマスクとクローク</b>は、ショー中に着用する必要があります。</li><li><b>事前のご予約を強くお勧めいたします</b> — 当日入場は空席状況により、開演前まで承ります。</li></ul>",
     "rule1": "入場は16歳以上です。",
-    "rule1_html": "入場は<b>14歳以上</b>です。",
+    "rule1_html": "入場は<b><span class=\"num bold\">14</span>歳以上</b>です。",
     "rule2": "Svengaliは当会場での事故、怪我、損害について責任を負いません。",
     "rule2_html": "<b>Svengaliは当会場での</b>事故、怪我、損害について責任を負いません。",
     "rule3": "城で提供されるマスクとクロークは、ショー中に着用する必要があります。",
