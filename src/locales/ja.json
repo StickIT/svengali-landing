@@ -76,7 +76,7 @@
       "price_now": "5,000",
       "price_original": "5,000",
       "intro_html": "スタンダードシート",
-      "access_html": "<span class=\"num duration\">90</span>分ショーへの<span class=\"num duration\">90</span>分間のご入場",
+      "access_html": "<span class=\"num duration\">90</span>分ショーへのご入場",
       "seating_html": "バルコニーまたはサイドシートよりショーをお楽しみください",
       "costume": "クロークと手作りマスクをご用意しております",
       "drinks_html": "ドリンクは含まれておりません"
@@ -113,6 +113,7 @@
     "address": "日本、〒604-8023 京都府京都市中京区備前島町、7階",
     "address_html": "ＰＬＥＸＵＳ、<span class=\"num\">7</span><sup>階</sup>、京都市中京区備前島町、<span style=\"white-space: nowrap\">〒<span class=\"num\">604-8023</span></span> 京都、日本",
     "access_title": "アクセス",
+    "access_note_html": "<ul><li>街中にありながら、まるで城のような特別な空間に佇んでいます。</li><li>アクセスしやすいのに、意外性に満ちています。</li><li>京都の中心部、河原町や祇園のすぐ近くです。</li></ul>",
     "metro_title": "地下鉄",
     "metro_1": "祇園四条／三条駅 京阪線",
     "metro_2": "京都河原町駅 阪急線",
@@ -124,15 +125,7 @@
   "rules": {
     "title": "Svengaliのルール",
     "important_title": "重要なメッセージ",
-    "rules_html": "<ul><li>入場は<b><span class=\"num bold\">14</span>歳以上</b>です。</li><li><b>Svengaliは当会場での</b>事故、怪我、損害について責任を負いません。</li><li><b>城で提供されるマスクとクローク</b>は、ショー中に着用する必要があります。</li><li><b>事前のご予約を強くお勧めいたします</b> — 当日入場は空席状況により、開演前まで承ります。</li></ul>",
-    "rule1": "入場は16歳以上です。",
-    "rule1_html": "入場は<b><span class=\"num bold\">14</span>歳以上</b>です。",
-    "rule2": "Svengaliは当会場での事故、怪我、損害について責任を負いません。",
-    "rule2_html": "<b>Svengaliは当会場での</b>事故、怪我、損害について責任を負いません。",
-    "rule3": "城で提供されるマスクとクロークは、ショー中に着用する必要があります。",
-    "rule3_html": "<b>城で提供されるマスクとクローク</b>は、ショー中に着用する必要があります。",
-    "rule4": "当日入場不可 — オンライン予約はこちらから。",
-    "rule4_html": "<b>当日入場不可</b> — オンライン予約はこちらから。"
+    "rules_html": "<ul><li>入場は<b><span class=\"num bold\">14</span>歳以上</b>です。</li><li><b>Svengaliは当会場での</b>事故、怪我、損害について責任を負いません。</li><li><b>城で提供されるマスクとクローク</b>は、ショー中に着用する必要があります。</li><li><b>事前のご予約を強くお勧めいたします</b> — 当日入場は空席状況により、開演前まで承ります。</li></ul>"
   },
   "faq": {
     "title": "よくある質問",

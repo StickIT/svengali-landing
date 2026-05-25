@@ -897,6 +897,28 @@ section.location {
                             filter: drop-shadow(1px 2px 8px rgba(var(--ColorBlack-RGB, 1)));
                         }
 
+                        .note{
+                            padding: var(--space-xs) var(--space-m);
+                             max-width: 380px;
+
+                            @include responsive ('md'){
+                                max-width: 320px;
+                            }
+
+                            ul{
+                                gap: var(--space-m);
+
+                                li{
+                                    padding-left: 0;
+                                    text-align: center;
+
+                                    &::before{
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+
                         ul {
                             display: flex;
                             flex-direction: column;
@@ -927,7 +949,7 @@ section.location {
                     }
 
                     a.btn {
-                        margin-top: .75rem;
+                        align-self: center;
 
                         // align-items: flex-start;
                         span {

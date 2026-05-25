@@ -41,7 +41,7 @@
     "get_ticket_now": "Get your Ticket Now",
     "see_location": "See the Location",
     "read_rules": "Read our Rules and FAQ",
-    "get_directions": "Get the Direction on Google Maps"
+    "get_directions": "Get the Direction"
   },
   "hero": {
     "play_trailer_aria": "Play Video Trailer"
@@ -113,6 +113,7 @@
     "address": "7th Floor, Nakagyo Ward, Bizenjimach, 604-8023 Kyoto, Japan",
     "address_html": "ＰＬＥＸＵＳ, <span class=\"num\">7</span><sup>th</sup> Floor, Nakagyo Ward, Bizenjimachō, <span style=\"white-space: nowrap\">〒<span class=\"num\">604-8023</span></span> Kyoto, Japan",
     "access_title": "Access",
+    "access_note_html": "<ul><li>Hidden in the city, within a unique castle-like setting.</li><li>Easily accessible, yet completely unexpected.</li><li>Central Kyoto, near Kawaramachi and Gion.</li></ul>",
     "metro_title": "Metro",
     "metro_1": "Gion-Shijo / Sanjo Station Keihan Line",
     "metro_2": "Kyoto-Kawaramachi Station Hankyu Line", 
