@@ -480,6 +480,10 @@ section.tickets {
                         &.top {
                             img {
                                 height: var(--space-2xl-3xl);
+
+                                @include responsive ('sm') {
+                                    height: var(--space-3xl);
+                                }
                             }
                         }
                     }
@@ -500,6 +504,10 @@ section.tickets {
                         &.top {
                             img {
                                 height: var(--space-2xl-3xl);
+
+                                @include responsive ('sm') {
+                                    height: calc(var(--space-3xl));
+                                }
                             }
                         }
                     }
@@ -560,6 +568,10 @@ section.tickets {
                             height: calc(var(--space-2xl-3xl) - 1em);
                             width: auto;
                             pointer-events: none;
+
+                            @include responsive ('sm') {
+                                height: calc(var(--space-3xl) - 1em);
+                            }
                         }
 
                         &.bottom {
@@ -581,7 +593,7 @@ section.tickets {
                             padding:0;
                         }
 
-                         @include responsive ('lg') {
+                        @include responsive ('lg') {
                             padding: 0 var(--space-m);
                         }
 
